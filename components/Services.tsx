@@ -48,8 +48,12 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-slate-50 py-24">
+    <section
+      id="services"
+      className="scroll-mt-32 py-24"
+    >
       <div className="mx-auto max-w-7xl px-6">
+        {/* Section Header */}
         <div className="text-center">
           <p className="font-semibold uppercase tracking-[0.3em] text-[#005BAC]">
             Our Services
@@ -65,6 +69,7 @@ export default function Services() {
           </p>
         </div>
 
+        {/* Service Cards */}
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
@@ -72,23 +77,19 @@ export default function Services() {
             return (
               <div
                 key={service.title}
-                className="rounded-xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-slate-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-blue-50">
                   <Icon className="h-7 w-7 text-[#005BAC]" />
                 </div>
 
-                <h3 className="mt-6 text-xl font-semibold text-slate-900">
+                <h3 className="mt-5 text-xl font-semibold text-slate-900">
                   {service.title}
                 </h3>
 
                 <p className="mt-4 leading-7 text-slate-600">
                   {service.description}
                 </p>
-
-                <button className="mt-6 font-semibold text-[#005BAC] hover:underline">
-                  Learn More →
-                </button>
               </div>
             );
           })}

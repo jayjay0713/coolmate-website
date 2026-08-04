@@ -1,49 +1,120 @@
+import Image from "next/image";
+import { CheckCircle2 } from "lucide-react";
+
 export default function Hero() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto grid min-h-[80vh] max-w-7xl items-center gap-12 px-6 py-20 md:grid-cols-2">
-        
-        {/* Left Content */}
+    <section id="home" className="bg-white scroll-mt-32">
+      <div className="mx-auto grid min-h-[90vh] max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2">
+        {/* LEFT */}
         <div className="max-w-xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#005BAC]">
+          <p className="mb-4 text-lg font-semibold uppercase tracking-[0.2em] text-[#005BAC]">
             Coolmate Maintenance & Solutions Co.
           </p>
 
-          <h1 className="text-6xl lg:text-7xl font-bold leading-tight text-slate-900 md:text-6xl">
-            Professional Air Conditioning Solutions
+          <h1 className="text-3xl font-bold leading-tight text-slate-900 md:text-4xl lg:text-5xl">
+            Reliable Air Conditioning
+            <span className="block text-[#005BAC]">
+              Solutions
+            </span>
+            for Homes & Businesses
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            We provide preventive maintenance, repair, installation, and
-            troubleshooting services for residential and commercial air
-            conditioning systems.
+          <p className="mt-8 text-lg leading-8 text-slate-600">
+            Professional installation, preventive maintenance,
+            repair, and troubleshooting of VRF & Split-Type air
+            conditioning systems for residential and commercial
+            clients throughout the Philippines.
           </p>
 
-          <div className="mt-10 flex gap-4">
-            <button className="rounded-xl bg-[#005BAC] px-8 py-4 font-semibold text-white hover:bg-blue-700 transition">
-              Request a Quote
-            </button>
+          {/* Call to Action */}
+          <div className="mt-10">
+            <a
+              href="https://m.me/61580222981185"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-2xl bg-[#005BAC] px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl"
+            >
+              Request a Free Quote
+            </a>
+          </div>
 
-            <button className="rounded-xl border border-slate-300 px-8 py-4 font-semibold hover:bg-slate-100 transition">
-              Our Services
-            </button>
+          {/* Trust Indicators */}
+          <div className="mt-10 flex flex-col gap-4 text-slate-700">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="h-5 w-5 text-[#005BAC]" />
+              <span>Certified Technicians</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="h-5 w-5 text-[#005BAC]" />
+              <span>Residential & Commercial</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="h-5 w-5 text-[#005BAC]" />
+              <span>24/7 Customer Support</span>
+            </div>
           </div>
         </div>
 
-<div className="flex items-center justify-center">
-  <div className="flex h-[500px] w-full items-center justify-center rounded-3xl border-2 border-dashed border-slate-300 bg-slate-100">
-    <div className="text-center">
-      <p className="text-lg font-semibold text-slate-500">
-        Future Hero Image
-      </p>
+        {/* RIGHT */}
+        <div className="grid grid-cols-2 gap-4">
+          {/* Main Image */}
+          <div className="col-span-2 overflow-hidden rounded-3xl shadow-2xl">
+            <Image
+              src="/images/hero/hero-main.jpg"
+              alt="Coolmate Air Conditioning Services"
+              width={900}
+              height={500}
+              priority
+              className="h-[320px] w-full object-cover transition duration-500 hover:scale-105"
+            />
+          </div>
 
-      <p className="mt-2 text-sm text-slate-400">
-        Technician or Commercial HVAC Project
-      </p>
-    </div>
-  </div>
-</div>
+          {/* Image 1 */}
+          <div className="overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/images/hero/hero-1.jpg"
+              alt="Air Conditioning Installation"
+              width={400}
+              height={300}
+              className="h-[180px] w-full object-cover transition duration-500 hover:scale-105"
+            />
+          </div>
 
+          {/* Image 2 */}
+          <div className="overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/images/hero/hero-2.jpg"
+              alt="Preventive Maintenance"
+              width={400}
+              height={300}
+              className="h-[180px] w-full object-cover transition duration-500 hover:scale-105"
+            />
+          </div>
+
+          {/* Image 3 */}
+          <div className="overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/images/hero/hero-3.jpg"
+              alt="VRF System Service"
+              width={400}
+              height={300}
+              className="h-[180px] w-full object-cover transition duration-500 hover:scale-105"
+            />
+          </div>
+
+          {/* Image 4 */}
+          <div className="overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/images/hero/hero-4.jpg"
+              alt="Commercial Air Conditioning"
+              width={400}
+              height={300}
+              className="h-[180px] w-full object-cover transition duration-500 hover:scale-105"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

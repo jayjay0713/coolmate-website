@@ -1,42 +1,47 @@
 import {
-  ShieldCheck,
-  Wrench,
-  Clock3,
-  Handshake,
+  CheckCircle2,
+  CalendarDays,
+  Headset,
+  BriefcaseBusiness,
+  Building2,
 } from "lucide-react";
 
-const features = [
+const highlights = [
+  "Certified Technicians",
+  "Residential & Commercial Services",
+  "Transparent Pricing",
+  "Quality Workmanship Warranty",
+];
+
+const stats = [
   {
-    icon: Wrench,
-    title: "Skilled Technicians",
-    description:
-      "Our experienced technicians deliver professional air conditioning services with attention to detail.",
+    value: "2024",
+    label: "Established",
+    icon: CalendarDays,
   },
   {
-    icon: Clock3,
-    title: "Fast Response",
-    description:
-      "We respond promptly to service requests to minimize downtime and inconvenience.",
+    value: "24/7",
+    label: "Customer Support",
+    icon: Headset,
   },
   {
-    icon: ShieldCheck,
-    title: "Quality Workmanship",
-    description:
-      "Every service is performed using industry best practices and quality standards.",
+    value: "100+",
+    label: "Projects Completed",
+    icon: BriefcaseBusiness,
   },
   {
-    icon: Handshake,
-    title: "Reliable Support",
-    description:
-      "We build long-term relationships by providing dependable after-service support.",
+    value: "Residential",
+    label: "& Commercial",
+    icon: Building2,
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-slate-50">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center">
+    <section className="bg-white py-24">
+      <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2">
+        {/* Left */}
+        <div>
           <p className="font-semibold uppercase tracking-[0.3em] text-[#005BAC]">
             Why Choose Us
           </p>
@@ -45,32 +50,48 @@ export default function WhyChooseUs() {
             Trusted Air Conditioning Professionals
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-slate-600">
-            We are committed to delivering reliable, professional, and
-            high-quality air conditioning solutions for residential and
-            commercial clients.
+          <p className="mt-6 leading-8 text-slate-600">
+            We provide dependable air conditioning services backed by
+            experienced technicians, transparent pricing, and quality
+            workmanship for every residential and commercial client.
           </p>
+
+          <div className="mt-10 space-y-6">
+            {highlights.map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-4"
+              >
+                <CheckCircle2 className="mt-1 h-6 w-6 text-[#005BAC]" />
+
+                <p className="text-lg text-slate-700">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => {
-            const Icon = feature.icon;
+        {/* Right */}
+        <div className="grid grid-cols-2 gap-6">
+          {stats.map((stat) => {
+            const Icon = stat.icon;
 
             return (
               <div
-                key={feature.title}
-                className="rounded-xl border border-slate-200 p-8 text-center transition hover:-translate-y-1 hover:shadow-lg"
+                key={stat.label}
+                className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
-                  <Icon className="h-8 w-8 text-[#005BAC]" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50">
+                  <Icon className="h-7 w-7 text-[#005BAC]" />
                 </div>
 
-                <h3 className="mt-6 text-xl font-semibold">
-                  {feature.title}
+                <h3 className="mt-6 text-3xl font-bold text-slate-900">
+                  {stat.value}
                 </h3>
 
-                <p className="mt-4 text-slate-600 leading-7">
-                  {feature.description}
+                <p className="mt-2 text-slate-600">
+                  {stat.label}
                 </p>
               </div>
             );

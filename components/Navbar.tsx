@@ -1,45 +1,59 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const navLinks = [
+  { name: "Home", href: "/#home" },
+  { name: "About", href: "/#about" },
+  { name: "Services", href: "/#services" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Contact", href: "/#contact" },
+];
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
+      <div className="mx-auto flex h-28 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="flex flex-col">
-          <span className="text-3xl font-bold tracking-wide text-[#005BAC]">
-            COOLMATE
-          </span>
-
-          <span className="text-sm text-gray-500">
-            Maintenance & Solutions Co.
-          </span>
+        <Link href="/#home" className="flex items-center">
+          <Image
+            src="/images/logo/logo.png"
+            alt="Coolmate Maintenance & Solutions Co."
+            width={600}
+            height={200}
+            priority
+            className="h-30 w-auto object-contain transition-transform duration-300 hover:scale-105"
+          />
         </Link>
 
-        {/* Menu */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="/" className="hover:text-[#005BAC] transition">
-            Home
-          </Link>
-
-          <Link href="/about" className="hover:text-[#005BAC] transition">
-            About
-          </Link>
-
-          <Link href="/services" className="hover:text-[#005BAC] transition">
-            Services
-          </Link>
-
-          <Link href="/projects" className="hover:text-[#005BAC] transition">
-            Projects
-          </Link>
-
-          <Link href="/contact" className="hover:text-[#005BAC] transition">
-            Contact
-          </Link>
-
-          <button className="rounded-lg bg-[#005BAC] px-5 py-2 text-white hover:bg-blue-700 transition">
-            Contact Us
-          </button>
+        {/* Navigation */}
+        <nav className="hidden items-center gap-12 lg:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              scroll
+              className="
+                relative
+                text-lg
+                font-medium
+                text-slate-700
+                transition-all
+                duration-300
+                hover:text-[#005BAC]
+                after:absolute
+                after:-bottom-2
+                after:left-0
+                after:h-[2px]
+                after:w-0
+                after:bg-[#005BAC]
+                after:transition-all
+                after:duration-300
+                hover:after:w-full
+              "
+            >
+              {link.name}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
