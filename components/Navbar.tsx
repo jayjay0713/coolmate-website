@@ -3,14 +3,14 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <Link href="/" className="flex flex-col">
-          <span className="text-2xl font-bold tracking-wide text-[#005BAC]">
+          <span className="text-3xl font-bold tracking-wide text-[#005BAC]">
             COOLMATE
           </span>
 
-          <span className="text-xs text-gray-500">
+          <span className="text-sm text-gray-500">
             Maintenance & Solutions Co.
           </span>
         </Link>
