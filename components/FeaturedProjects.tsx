@@ -27,7 +27,7 @@ export default function FeaturedProjects() {
       <div className="mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <div className="text-center">
-          <p className="font-semibold uppercase tracking-[0.3em] text-[#005BAC]">
+          <p className="text-lg font-bold uppercase tracking-[0.2em] text-[#005BAC] lg:text-xl">
             Featured Projects
           </p>
 

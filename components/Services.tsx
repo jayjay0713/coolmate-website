@@ -56,7 +56,7 @@ export default function Services() {
 
         {/* Section Header */}
         <div className="text-center">
-          <p className="font-semibold uppercase tracking-[0.3em] text-[#005BAC]">
+          <p className="text-lg font-bold uppercase tracking-[0.2em] text-[#005BAC] lg:text-xl">
             Our Services
           </p>
 

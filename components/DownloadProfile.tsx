@@ -2,7 +2,7 @@ export default function DownloadProfile() {
   return (
     <section className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-4xl px-6 text-center">
-        <p className="font-semibold uppercase tracking-[0.3em] text-[#005BAC]">
+        <p className="text-lg font-bold uppercase tracking-[0.2em] text-[#005BAC] lg:text-xl">
           Company Profile
         </p>
 
