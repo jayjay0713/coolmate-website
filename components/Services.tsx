@@ -50,7 +50,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="scroll-mt-32 py-24"
+      className="scroll-mt-32 bg-white py-24"
     >
       <div className="mx-auto max-w-7xl px-6">
         {/* Section Header */}
