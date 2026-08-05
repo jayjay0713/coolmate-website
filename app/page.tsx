@@ -8,6 +8,7 @@ import Expertise from "@/components/Expertise";
 import TrustedBy from "@/components/TrustedBy";
 import DownloadProfile from "@/components/DownloadProfile";
 import FloatingMessenger from "@/components/FloatingMessenger";
+import ServiceAreas from "@/components/ServiceAreas";
 
 
 export default function HomePage() {
@@ -20,6 +21,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <FeaturedProjects />
       <TrustedBy />
+      <ServiceAreas />
       <DownloadProfile />   
       <Footer />
 
