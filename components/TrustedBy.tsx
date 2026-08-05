@@ -21,6 +21,10 @@ const clients = [
     name: "ASA Foundation",
     logo: "/images/clients/asa.png",
   },
+  {
+    name: "Akulaku",
+    logo: "/images/clients/akulaku.png",
+  },
 ];
 
 export default function TrustedBy() {
@@ -44,18 +48,18 @@ export default function TrustedBy() {
         </div>
 
         {/* Client Logos */}
-        <div className="mt-12 grid grid-cols-2 items-center gap-8 sm:grid-cols-3 lg:mt-20 lg:grid-cols-5 lg:gap-12">
+        <div className="mt-12 grid grid-cols-2 items-center gap-8 sm:grid-cols-3 lg:mt-20 lg:grid-cols-6 lg:gap-10">
           {clients.map((client) => (
             <div
               key={client.name}
-              className="flex items-center justify-center"
+              className="flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
             >
               <Image
                 src={client.logo}
                 alt={client.name}
                 width={220}
                 height={100}
-                className="h-14 w-auto object-contain grayscale opacity-70 transition-all duration-300 hover:scale-105 hover:grayscale-0 hover:opacity-100 lg:h-20"
+                className="h-14 w-auto object-contain grayscale opacity-70 transition-all duration-300 hover:scale-110 hover:grayscale-0 hover:opacity-100 lg:h-16"
               />
             </div>
           ))}
