@@ -1,27 +1,27 @@
 import {
-  Home,
+  Wrench,
+  Search,
   Building2,
-  Factory,
 } from "lucide-react";
 
 const expertise = [
   {
-    icon: Home,
-    title: "Residential",
+    icon: Wrench,
+    title: "Preventive Maintenance",
     description:
-      "Professional air conditioning solutions for homes, apartments and condominiums.",
+      "Comprehensive preventive maintenance programs that maximize system performance, reduce breakdowns, and extend the life of residential, commercial, and industrial air conditioning systems.",
+  },
+  {
+    icon: Search,
+    title: "Troubleshooting & Repair",
+    description:
+      "Accurate fault diagnosis and professional repair of split-type, package, ducted, and VRF air conditioning systems using industry-standard tools and proven procedures.",
   },
   {
     icon: Building2,
-    title: "Commercial",
+    title: "VRF Specialists",
     description:
-      "Reliable HVAC services for offices, retail stores, restaurants and commercial buildings.",
-  },
-  {
-    icon: Factory,
-    title: "Industrial",
-    description:
-      "Preventive maintenance and specialized cooling solutions for warehouses and industrial facilities.",
+      "Specialized maintenance, troubleshooting, and repair for Mitsubishi Electric and other VRF air conditioning systems handled by experienced technicians.",
   },
 ];
 
@@ -40,15 +40,18 @@ export default function Expertise() {
           </p>
 
           <h2 className="mt-3 text-3xl font-bold text-slate-900 lg:mt-4 lg:text-4xl">
-            Professional HVAC Solutions
+            Preventive Maintenance,
             <br className="hidden lg:block" />
-            <span className="lg:inline"> for Every Environment</span>
+            <span className="lg:inline">
+              {" "}Troubleshooting & Repair Specialists
+            </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 lg:mt-6 lg:text-lg lg:leading-8">
-            Whether it's a home, office, retail space or industrial facility,
-            Coolmate delivers reliable air conditioning solutions tailored to
-            every environment.
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 lg:mt-6 lg:text-lg lg:leading-8">
+            Coolmate Maintenance & Solutions Co. provides expert preventive maintenance, troubleshooting, and
+            repair services for VRF and split-type air conditioning systems. We deliver dependable HVAC solutions
+            that maximize system performance, minimize downtime, and ensure efficient operation across
+            residential, commercial, and industrial facilities.
           </p>
         </div>
 
