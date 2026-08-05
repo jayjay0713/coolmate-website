@@ -1,4 +1,10 @@
-import { CheckCircle2 } from "lucide-react";
+import {
+  CheckCircle2,
+  Award,
+  Headphones,
+  Briefcase,
+  ShieldCheck,
+} from "lucide-react";
 
 const highlights = [
   "Certified Technicians",
@@ -9,20 +15,28 @@ const highlights = [
 
 const stats = [
   {
-    value: "EST. 2024",
+    value: "2024",
     label: "Established",
+    desc: "Built on years of industry experience.",
+    icon: Award,
   },
   {
     value: "24/7",
     label: "Customer Support",
+    desc: "Quick assistance whenever you need us.",
+    icon: Headphones,
   },
   {
     value: "100+",
     label: "Projects Completed",
+    desc: "Successfully completed residential and commercial projects.",
+    icon: Briefcase,
   },
   {
-    value: "Residential",
-    label: "& Commercial",
+    value: "100%",
+    label: "Commitment",
+    desc: "Dedicated to quality workmanship and customer satisfaction.",
+    icon: ShieldCheck,
   },
 ];
 
@@ -42,18 +56,20 @@ export default function WhyChooseUs() {
           </h2>
 
           <p className="mt-5 text-base leading-7 text-slate-600 lg:mt-6 lg:text-lg lg:leading-8">
-            We provide dependable air conditioning services backed by
-            experienced technicians, transparent pricing, and quality
-            workmanship for every residential and commercial client.
+            Coolmate Maintenance & Solutions Co. specializes in
+            preventive maintenance, troubleshooting, repair, and VRF
+            air conditioning systems. We are committed to delivering
+            reliable, efficient, and professional HVAC solutions for
+            residential, commercial, and industrial clients.
           </p>
 
-          <div className="mt-8 space-y-4 lg:mt-10 lg:space-y-6">
+          <div className="mt-8 space-y-4 lg:mt-10 lg:space-y-5">
             {highlights.map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-3 lg:gap-4"
+                className="flex items-start gap-3"
               >
-                <CheckCircle2 className="mt-1 h-5 w-5 text-[#005BAC] lg:h-6 lg:w-6" />
+                <CheckCircle2 className="mt-1 h-5 w-5 text-[#005BAC]" />
 
                 <p className="text-base text-slate-700 lg:text-lg">
                   {item}
@@ -64,21 +80,35 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Right Side */}
-        <div className="grid grid-cols-2 gap-4 lg:gap-6">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl bg-slate-900 p-6 text-center text-white shadow-lg lg:p-10"
-            >
-              <h3 className="text-2xl font-bold lg:text-4xl">
-                {stat.value}
-              </h3>
+        <div className="grid grid-cols-2 gap-4 lg:gap-5">
+          {stats.map((stat) => {
+            const Icon = stat.icon;
 
-              <p className="mt-2 text-sm text-slate-300 lg:mt-4 lg:text-base">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+            return (
+              <div
+                key={stat.label}
+                className="group rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-5 text-center text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:ring-2 hover:ring-[#005BAC] lg:p-6"
+              >
+                <div className="mb-3 flex justify-center">
+                  <div className="rounded-xl bg-[#005BAC]/20 p-2.5">
+                    <Icon className="h-6 w-6 text-[#4EA8FF] lg:h-7 lg:w-7" />
+                  </div>
+                </div>
+
+                <h3 className="text-3xl font-extrabold tracking-tight lg:text-4xl">
+                  {stat.value}
+                </h3>
+
+                <p className="mt-2 text-base font-semibold text-[#4EA8FF]">
+                  {stat.label}
+                </p>
+
+                <p className="mt-2 text-xs leading-5 text-slate-300 lg:text-sm">
+                  {stat.desc}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
       </div>
