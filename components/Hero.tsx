@@ -25,7 +25,7 @@ export default function Hero() {
           {/* Call to Action */}
           <div className="mt-8 lg:mt-10">
             <a
-              href="https://m.me/61580222981185"
+              href="mailto:info@coolmateco.com?subject=Request%20for%20Air%20Conditioning%20Quotation&body=Hello%20Coolmate,%0A%0AI%20would%20like%20to%20request%20a%20quotation.%0A%0AName:%0ACompany:%0ALocation:%0AContact%20Number:%0A%0AThank%20you."
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full justify-center rounded-2xl bg-[#005BAC] px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl lg:inline-flex lg:w-auto"

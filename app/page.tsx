@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Expertise from "@/components/Expertise";
 import TrustedBy from "@/components/TrustedBy";
 import DownloadProfile from "@/components/DownloadProfile";
+import FloatingMessenger from "@/components/FloatingMessenger";
 
 
 export default function HomePage() {
@@ -21,6 +22,8 @@ export default function HomePage() {
       <TrustedBy />
       <DownloadProfile />   
       <Footer />
+
+      <FloatingMessenger />
     </>
   );
 }
