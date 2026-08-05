@@ -7,6 +7,10 @@ export default function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 lg:min-h-[90vh] lg:grid-cols-2 lg:gap-16 lg:py-20">
         {/* LEFT */}
         <div className="max-w-xl">
+          <p className="mb-3 text-xl font-bold tracking-wide text-[#005BAC] lg:mb-4 lg:text-2xl">
+            Coolmate Maintenance & Solutions Co.
+          </p>
+
           <h1 className="text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-5xl">
             Reliable Air Conditioning
             <span className="block text-[#005BAC]">
@@ -26,8 +30,6 @@ export default function Hero() {
           <div className="mt-8 lg:mt-10">
             <a
               href="mailto:info@coolmateco.com?subject=Request%20for%20Air%20Conditioning%20Quotation&body=Hello%20Coolmate,%0A%0AI%20would%20like%20to%20request%20a%20quotation.%0A%0AName:%0ACompany:%0ALocation:%0AContact%20Number:%0A%0AThank%20you."
-              target="_blank"
-              rel="noopener noreferrer"
               className="flex w-full justify-center rounded-2xl bg-[#005BAC] px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl lg:inline-flex lg:w-auto"
             >
               Request a Free Quote
