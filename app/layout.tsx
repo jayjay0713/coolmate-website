@@ -12,30 +12,36 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://coolmateco.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://coolmateco.com"),
+  metadataBase: new URL(siteUrl),
 
   title:
-    "Coolmate Maintenance & Solutions Co. | Air Conditioning Installation, Repair & VRF Services",
+    "Coolmate Maintenance & Solutions Co. | VRF & Aircon Maintenance, Repair & Troubleshooting",
 
   description:
-    "Coolmate Maintenance & Solutions Co. provides professional air conditioning installation, repair, preventive maintenance, chemical cleaning, troubleshooting, and VRF services for residential, commercial, and industrial clients in Cavite, Metro Manila, Laguna, Batangas, and nearby areas.",
+    "Coolmate Maintenance & Solutions Co. provides professional VRF and air conditioning preventive maintenance, troubleshooting, repair, chemical cleaning, and technical services for residential, commercial, and industrial clients in Cavite, Metro Manila, Laguna, Batangas, and nearby areas.",
 
   keywords: [
-    "Air Conditioning",
-    "Aircon Installation",
-    "Aircon Repair",
-    "Preventive Maintenance",
-    "Chemical Cleaning",
-    "VRF Services",
-    "HVAC",
+    "VRF preventive maintenance",
+    "VRF troubleshooting",
+    "VRF repair",
+    "Aircon preventive maintenance",
+    "Aircon repair",
+    "Aircon troubleshooting",
+    "Chemical cleaning",
+    "VRF services",
+    "HVAC services",
     "Mitsubishi Electric VRF",
-    "Commercial Air Conditioning",
-    "Residential Air Conditioning",
+    "Commercial air conditioning",
+    "Residential air conditioning",
     "Industrial HVAC",
-    "Air Conditioning Cavite",
-    "Air Conditioning Imus",
-    "Air Conditioning Metro Manila",
+    "Aircon services Cavite",
+    "Aircon services Imus",
+    "VRF services Cavite",
+    "VRF services Metro Manila",
+    "HVAC contractor Cavite",
     "Coolmate Maintenance and Solutions Co.",
   ],
 
@@ -46,21 +52,20 @@ export const metadata: Metadata = {
   ],
 
   creator: "Coolmate Maintenance & Solutions Co.",
-
   publisher: "Coolmate Maintenance & Solutions Co.",
 
   alternates: {
-    canonical: "https://coolmateco.com",
+    canonical: siteUrl,
   },
 
   openGraph: {
     title:
-      "Coolmate Maintenance & Solutions Co. | Air Conditioning Installation, Repair & VRF Services",
+      "Coolmate Maintenance & Solutions Co. | VRF & Aircon Maintenance, Repair & Troubleshooting",
 
     description:
-      "Professional HVAC solutions including installation, repair, preventive maintenance, chemical cleaning, troubleshooting, and VRF services.",
+      "Professional VRF and air conditioning preventive maintenance, troubleshooting, repair, chemical cleaning, and technical services across Cavite, Metro Manila, Laguna, Batangas, and nearby areas.",
 
-    url: "https://coolmateco.com",
+    url: siteUrl,
 
     siteName: "Coolmate Maintenance & Solutions Co.",
 
@@ -82,10 +87,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Coolmate Maintenance & Solutions Co. | Air Conditioning Installation, Repair & VRF Services",
+      "Coolmate Maintenance & Solutions Co. | VRF & Aircon Services",
 
     description:
-      "Professional HVAC services in Cavite, Metro Manila, Laguna, and nearby areas.",
+      "Professional VRF and air conditioning preventive maintenance, troubleshooting, repair, chemical cleaning, and technical services.",
 
     images: ["/images/logo/logo.png"],
   },
@@ -110,12 +115,20 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HVACBusiness",
+
     name: "Coolmate Maintenance & Solutions Co.",
-    image: "https://coolmateco.com/images/logo/logo.png",
-    "@id": "https://coolmateco.com",
-    url: "https://coolmateco.com",
+
+    url: siteUrl,
+
+    "@id": siteUrl,
+
+    image: `${siteUrl}/images/logo/logo.png`,
+
     telephone: "+639959279906",
+
     email: "info@coolmateco.com",
+
+    priceRange: "₱₱",
 
     address: {
       "@type": "PostalAddress",
@@ -127,34 +140,78 @@ export default function RootLayout({
       addressCountry: "PH",
     },
 
-    openingHours: "Mo-Sa 08:00-17:00",
-
-    priceRange: "₱₱",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "08:00",
+        closes: "17:00",
+      },
+    ],
 
     areaServed: [
-      "Imus",
-      "Bacoor",
-      "Dasmariñas",
-      "General Trias",
-      "Silang",
-      "Trece Martires",
-      "Cavite",
-      "Metro Manila",
-      "Laguna",
-      "Batangas",
+      {
+        "@type": "City",
+        name: "Imus",
+      },
+      {
+        "@type": "City",
+        name: "Bacoor",
+      },
+      {
+        "@type": "City",
+        name: "Dasmariñas",
+      },
+      {
+        "@type": "City",
+        name: "General Trias",
+      },
+      {
+        "@type": "City",
+        name: "Silang",
+      },
+      {
+        "@type": "City",
+        name: "Trece Martires",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Cavite",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Metro Manila",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Laguna",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Batangas",
+      },
+    ],
+
+    serviceType: [
+      "VRF Preventive Maintenance",
+      "VRF Troubleshooting",
+      "VRF Repair",
+      "Air Conditioning Preventive Maintenance",
+      "Air Conditioning Repair",
+      "Air Conditioning Troubleshooting",
+      "Chemical Cleaning",
+      "VRF Services",
     ],
 
     sameAs: [
       "https://www.facebook.com/profile.php?id=61580222981185",
-    ],
-
-    serviceType: [
-      "Air Conditioning Installation",
-      "Air Conditioning Repair",
-      "Preventive Maintenance",
-      "Chemical Cleaning",
-      "VRF Services",
-      "Air Conditioning Troubleshooting",
     ],
   };
 
@@ -163,7 +220,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
