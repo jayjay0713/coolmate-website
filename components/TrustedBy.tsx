@@ -68,7 +68,7 @@ export default function TrustedBy() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#94A3B8] lg:text-lg lg:leading-8">
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#94A3B8] lg:mt-6 lg:text-lg lg:leading-8">
             We're proud to provide professional HVAC preventive
             maintenance, troubleshooting, repair, and VRF services to
             leading companies, educational institutions, and trusted
@@ -76,39 +76,46 @@ export default function TrustedBy() {
           </p>
         </div>
 
-        {/* OUR CLIENTS */}
+        {/* ==================== OUR CLIENTS ==================== */}
         <div className="mt-16">
           <h3 className="mb-10 text-center text-xl font-bold uppercase tracking-widest text-[#1683FF]">
             Our Clients
           </h3>
 
-          <div className="grid grid-cols-2 items-center gap-10 sm:grid-cols-3 lg:grid-cols-4 lg:gap-14">
+          <div className="grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 sm:grid-cols-4 lg:gap-x-16 lg:gap-y-12">
             {clients.map((client) => (
               <div
                 key={client.name}
                 className="
-                  group flex h-24 items-center justify-center
-                  rounded-2xl
-                  border border-transparent
+                  group flex h-32 w-32
+                  items-center justify-center
+                  rounded-full
+                  bg-white
+                  p-5
+                  shadow-[0_10px_30px_rgba(0,0,0,0.25)]
                   transition-all duration-300
                   hover:-translate-y-2
-                  hover:border-[#25282D]
-                  hover:bg-[#15171A]
+                  hover:scale-105
+                  hover:shadow-[0_0_35px_rgba(22,131,255,0.22)]
+                  sm:h-36 sm:w-36
+                  sm:p-6
+                  lg:h-40 lg:w-40
+                  lg:p-7
                 "
               >
                 <Image
                   src={client.logo}
                   alt={client.name}
-                  width={260}
-                  height={120}
+                  width={220}
+                  height={100}
                   className="
-                    h-16 w-auto object-contain
-                    opacity-85
-                    transition-all duration-300
-                    group-hover:scale-110
-                    group-hover:opacity-100
-                    group-hover:drop-shadow-[0_12px_25px_rgba(22,131,255,0.18)]
-                    lg:h-20
+                    max-h-24
+                    max-w-full
+                    w-auto
+                    object-contain
+                    transition-transform
+                    duration-300
+                    group-hover:scale-105
                   "
                 />
               </div>
@@ -119,7 +126,7 @@ export default function TrustedBy() {
         {/* Divider */}
         <div className="my-16 h-px bg-[#25282D]" />
 
-        {/* STRATEGIC PARTNERS */}
+        {/* ==================== STRATEGIC PARTNERS ==================== */}
         <div>
           <h3 className="mb-4 text-center text-xl font-bold uppercase tracking-widest text-[#1683FF]">
             Strategic Partners
@@ -136,11 +143,12 @@ export default function TrustedBy() {
               <div
                 key={partner.name}
                 className="
-                  group flex h-40 items-center justify-center
+                  group flex h-40
+                  items-center justify-center
                   rounded-3xl
                   border border-[#25282D]
                   bg-[#15171A]
-                  p-8
+                  p-6
                   shadow-[0_10px_35px_rgba(0,0,0,0.25)]
                   transition-all duration-300
                   hover:-translate-y-2
@@ -149,17 +157,33 @@ export default function TrustedBy() {
                   hover:shadow-[0_15px_45px_rgba(22,131,255,0.12)]
                 "
               >
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  width={340}
-                  height={160}
+                {/* White Logo Background */}
+                <div
                   className="
-                    max-h-24 w-auto object-contain
+                    flex h-28 w-full
+                    items-center justify-center
+                    rounded-2xl
+                    bg-white
+                    px-8 py-5
+                    shadow-sm
                     transition-all duration-300
-                    group-hover:scale-110
+                    group-hover:scale-[1.03]
                   "
-                />
+                >
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={340}
+                    height={160}
+                    className="
+                      max-h-20
+                      max-w-full
+                      w-auto
+                      object-contain
+                      transition-transform duration-300
+                    "
+                  />
+                </div>
               </div>
             ))}
           </div>
