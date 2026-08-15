@@ -17,18 +17,18 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 z-50 border-b border-[#25282D]/80 bg-[#090A0C]/90 shadow-[0_4px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
 
         {/* Logo */}
         <Link href="/#home" className="flex items-center">
           <Image
-            src="/images/logo/logo.png"
+            src="/images/logo/coolmate-dark.png"
             alt="Coolmate Maintenance & Solutions Co."
             width={600}
             height={200}
             priority
-            className="h-20 w-auto object-contain lg:h-24 transition-transform duration-300 hover:scale-105"
+            className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105 lg:h-24"
           />
         </Link>
 
@@ -39,10 +39,17 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               scroll
-              className="relative text-lg font-medium text-slate-700 transition-all duration-300 hover:text-[#005BAC]
-              after:absolute after:-bottom-2 after:left-0 after:h-[2px]
-              after:w-0 after:bg-[#005BAC] after:transition-all
-              after:duration-300 hover:after:w-full"
+              className="
+                relative text-lg font-medium text-[#CBD5E1]
+                transition-all duration-300
+                hover:text-[#1683FF]
+                after:absolute after:-bottom-2 after:left-0
+                after:h-[2px] after:w-0
+                after:bg-[#1683FF]
+                after:shadow-[0_0_10px_rgba(22,131,255,0.8)]
+                after:transition-all after:duration-300
+                hover:after:w-full
+              "
             >
               {link.name}
             </Link>
@@ -52,27 +59,35 @@ export default function Navbar() {
         {/* Mobile Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="rounded-xl p-2 lg:hidden"
+          className="rounded-xl p-2 text-[#CBD5E1] transition hover:bg-[#15171A] hover:text-[#1683FF] lg:hidden"
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           {open ? (
-            <X className="h-8 w-8 text-slate-700" />
+            <X className="h-8 w-8" />
           ) : (
-            <Menu className="h-8 w-8 text-slate-700" />
+            <Menu className="h-8 w-8" />
           )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {open && (
-        <nav className="border-t border-slate-200 bg-white lg:hidden">
+        <nav className="border-t border-[#25282D] bg-[#101214] lg:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               scroll
               onClick={() => setOpen(false)}
-              className="block border-b border-slate-100 px-6 py-4 text-lg text-slate-700 transition hover:bg-slate-50 hover:text-[#005BAC]"
+              className="
+                block border-b border-[#25282D]
+                px-6 py-4 text-lg font-medium
+                text-[#CBD5E1]
+                transition-all duration-300
+                hover:bg-[#15171A]
+                hover:text-[#1683FF]
+              "
             >
               {link.name}
             </Link>

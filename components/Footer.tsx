@@ -1,18 +1,20 @@
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer
       id="contact"
-      className="scroll-mt-28 border-t border-slate-200 bg-white"
+      className="scroll-mt-28 border-t border-[#25282D] bg-[#090A0C]"
     >
-      <div className="mx-auto max-w-7xl px-6 py-8 lg:py-10">
-        <div className="grid gap-8 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-6 py-10 lg:py-14">
+
+        <div className="grid gap-10 lg:grid-cols-4 lg:gap-8">
+
           {/* Company */}
           <div>
             <Image
-              src="/images/logo/logo.png"
+              src="/images/logo/coolmate-dark.png"
               alt="Coolmate Maintenance & Solutions Co."
               width={420}
               height={140}
@@ -20,46 +22,68 @@ export default function Footer() {
               className="h-auto w-full max-w-[180px] object-contain lg:max-w-[220px]"
             />
 
-            <p className="mt-3 leading-7 text-slate-600">
+            <p className="mt-4 leading-7 text-[#94A3B8]">
               Keeping Every Space Cool,
               <br />
               Comfortable & Efficient.
             </p>
+
+            <div className="mt-5 h-1 w-12 rounded-full bg-[#1683FF] shadow-[0_0_12px_rgba(22,131,255,0.5)]" />
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-slate-900">
+            <h3 className="mb-5 text-lg font-semibold text-[#F8FAFC]">
               Our Services
             </h3>
 
-            <ul className="space-y-2 text-slate-600">
-              <li>Preventive Maintenance</li>
-              <li>Aircon Repair</li>
-              <li>Installation</li>
-              <li>Chemical Cleaning</li>
-              <li>VRF Services</li>
-              <li>Troubleshooting</li>
+            <ul className="space-y-3 text-[#94A3B8]">
+              <li className="transition-colors hover:text-[#1683FF]">
+                Preventive Maintenance
+              </li>
+
+              <li className="transition-colors hover:text-[#1683FF]">
+                Aircon Repair
+              </li>
+
+              <li className="transition-colors hover:text-[#1683FF]">
+                Troubleshooting
+              </li>
+
+              <li className="transition-colors hover:text-[#1683FF]">
+                Chemical Cleaning
+              </li>
+
+              <li className="transition-colors hover:text-[#1683FF]">
+                VRF Services
+              </li>
+
+              <li className="transition-colors hover:text-[#1683FF]">
+                System Diagnostics
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-slate-900">
+            <h3 className="mb-5 text-lg font-semibold text-[#F8FAFC]">
               Contact Us
             </h3>
 
-            <div className="space-y-3 lg:space-y-4">
+            <div className="space-y-4">
+
               {/* Phone */}
               <div className="flex items-start gap-3">
-                <Phone className="mt-1 h-5 w-5 text-[#005BAC]" />
+                <Phone className="mt-1 h-5 w-5 shrink-0 text-[#1683FF]" />
 
                 <div>
-                  <p className="text-sm text-slate-500">Mobile</p>
+                  <p className="text-sm text-[#64748B]">
+                    Mobile
+                  </p>
 
                   <a
                     href="tel:+639959279906"
-                    className="text-slate-700 transition hover:text-[#005BAC]"
+                    className="text-[#CBD5E1] transition hover:text-[#1683FF]"
                   >
                     0995 927 9906
                   </a>
@@ -68,14 +92,16 @@ export default function Footer() {
 
               {/* Email */}
               <div className="flex items-start gap-3">
-                <Mail className="mt-1 h-5 w-5 text-[#005BAC]" />
+                <Mail className="mt-1 h-5 w-5 shrink-0 text-[#1683FF]" />
 
                 <div>
-                  <p className="text-sm text-slate-500">Email</p>
+                  <p className="text-sm text-[#64748B]">
+                    Email
+                  </p>
 
                   <a
                     href="mailto:info@coolmateco.com"
-                    className="break-all text-slate-700 transition hover:text-[#005BAC]"
+                    className="break-all text-[#CBD5E1] transition hover:text-[#1683FF]"
                   >
                     info@coolmateco.com
                   </a>
@@ -84,16 +110,18 @@ export default function Footer() {
 
               {/* Address */}
               <div className="flex items-start gap-3">
-                <MapPin className="mt-1 h-5 w-5 text-[#005BAC]" />
+                <MapPin className="mt-1 h-5 w-5 shrink-0 text-[#1683FF]" />
 
                 <div>
-                  <p className="text-sm text-slate-500">Address</p>
+                  <p className="text-sm text-[#64748B]">
+                    Address
+                  </p>
 
                   <a
                     href="https://maps.google.com/?q=Coolmate+Maintenance+and+Solutions+Co."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-700 transition hover:text-[#005BAC]"
+                    className="text-[#CBD5E1] transition hover:text-[#1683FF]"
                   >
                     Block 9 Lot 28 Atis St.
                     <br />
@@ -105,19 +133,37 @@ export default function Footer() {
                   </a>
                 </div>
               </div>
+
+              {/* Business Hours */}
+              <div className="flex items-start gap-3">
+                <Clock className="mt-1 h-5 w-5 shrink-0 text-[#1683FF]" />
+
+                <div>
+                  <p className="text-sm text-[#64748B]">
+                    Business Hours
+                  </p>
+
+                  <p className="text-[#CBD5E1]">
+                    Monday – Saturday
+                    <br />
+                    8:00 AM – 5:00 PM
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
 
           {/* Google Map */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-slate-900">
+            <h3 className="mb-5 text-lg font-semibold text-[#F8FAFC]">
               Find Us
             </h3>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+            <div className="overflow-hidden rounded-2xl border border-[#25282D] bg-[#15171A] shadow-[0_10px_35px_rgba(0,0,0,0.3)]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3864.195182657073!2d120.92333267573902!3d14.415909181570548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d3c4d5360743%3A0x399bede7bbfbff40!2sCoolmate%20Maintenance%20and%20Solutions%20Co.!5e0!3m2!1sen!2sph!4v1785851783508!5m2!1sen!2sph"
-                className="h-[180px] w-full lg:h-[220px]"
+                className="h-[200px] w-full lg:h-[220px]"
                 style={{ border: 0 }}
                 loading="lazy"
                 allowFullScreen
@@ -126,18 +172,27 @@ export default function Footer() {
               />
             </div>
           </div>
+
         </div>
 
         {/* Bottom */}
-        <div className="mt-8 border-t border-slate-200 pt-5">
-          <div className="flex flex-col items-center justify-between gap-3 text-center text-sm text-slate-500 md:flex-row md:text-left">
+        <div className="mt-10 border-t border-[#25282D] pt-6">
+          <div className="flex flex-col items-center justify-between gap-3 text-center text-sm text-[#64748B] md:flex-row md:text-left">
+
             <p>
-              © 2024 Coolmate Maintenance & Solutions Co. All rights reserved.
+              © 2026 Coolmate Maintenance & Solutions Co. All rights reserved.
             </p>
 
-            <p>Designed & Developed by Coolmate</p>
+            <p>
+              Designed & Developed by{" "}
+              <span className="text-[#94A3B8]">
+                Coolmate
+              </span>
+            </p>
+
           </div>
         </div>
+
       </div>
     </footer>
   );
