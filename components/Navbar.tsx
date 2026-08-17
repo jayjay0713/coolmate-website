@@ -1,99 +1,810 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import {
+  Menu,
+  X,
+  Phone,
+  Mail,
+  Clock,
+  ChevronDown,
+} from "lucide-react";
 
-const navLinks = [
-  { name: "Home", href: "/#home" },
-  { name: "About", href: "/#about" },
-  { name: "Services", href: "/#services" },
-  { name: "Projects", href: "/#projects" },
-  { name: "Contact", href: "/#contact" },
+const serviceLinks = [
+  {
+    name: "Air Conditioning Preventive Maintenance",
+    href: "/services/preventive-maintenance",
+  },
+  {
+    name: "Air Conditioning General Cleaning",
+    href: "/services/cleaning",
+  },
+  {
+    name: "Air Conditioning Repair",
+    href: "/services/repair",
+  },
+  {
+    name: "Air Conditioning Troubleshooting",
+    href: "/services/troubleshooting",
+  },
+  {
+    name: "Air Conditioning Sales & Installation",
+    href: "/services/installation",
+  },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+
+  const pathname = usePathname();
+
+  /* ============================================================
+     SCROLL TO TOP WHEN CHANGING PAGE
+  ============================================================ */
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [pathname]);
+
+  /* ============================================================
+     CLOSE MOBILE MENU WHEN ROUTE CHANGES
+  ============================================================ */
+
+  useEffect(() => {
+    setOpen(false);
+    setServicesOpen(false);
+  }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#25282D]/80 bg-[#090A0C]/90 shadow-[0_4px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl">
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
+    <header className="sticky top-0 z-50 bg-white shadow-md">
 
-        {/* Logo */}
-        <Link href="/#home" className="flex items-center">
-          <Image
-            src="/images/logo/coolmate-dark.png"
-            alt="Coolmate Maintenance & Solutions Co."
-            width={600}
-            height={200}
-            priority
-            className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105 lg:h-24"
-          />
-        </Link>
+      {/* ========================================================= */}
+      {/* TOP CONTACT BAR */}
+      {/* ========================================================= */}
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-12 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              scroll
+      <div className="bg-[#28538A] text-white">
+
+        <div
+          className="
+            flex
+            w-full
+            flex-wrap
+            items-center
+            justify-between
+            gap-x-4
+            gap-y-1
+            px-4
+            py-2
+            sm:px-6
+            lg:px-10
+            xl:px-12
+          "
+        >
+
+          {/* CONTACT INFORMATION */}
+
+          <div
+            className="
+              flex
+              flex-wrap
+              items-center
+              gap-x-4
+              gap-y-1
+              text-[11px]
+              sm:gap-x-5
+              sm:text-sm
+            "
+          >
+
+            {/* PHONE */}
+
+            <a
+              href="tel:+639959279906"
               className="
-                relative text-lg font-medium text-[#CBD5E1]
-                transition-all duration-300
-                hover:text-[#1683FF]
-                after:absolute after:-bottom-2 after:left-0
-                after:h-[2px] after:w-0
-                after:bg-[#1683FF]
-                after:shadow-[0_0_10px_rgba(22,131,255,0.8)]
-                after:transition-all after:duration-300
-                hover:after:w-full
+                flex
+                items-center
+                gap-1.5
+                whitespace-nowrap
+                transition
+                hover:text-[#4EA8FF]
               "
             >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+              <Phone className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
 
-        {/* Mobile Button */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="rounded-xl p-2 text-[#CBD5E1] transition hover:bg-[#15171A] hover:text-[#1683FF] lg:hidden"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-        >
-          {open ? (
-            <X className="h-8 w-8" />
-          ) : (
-            <Menu className="h-8 w-8" />
-          )}
-        </button>
+              <span>
+                0995 927 9906
+              </span>
+            </a>
+
+            {/* EMAIL */}
+
+            <a
+              href="mailto:info@coolmateco.com"
+              className="
+                flex
+                items-center
+                gap-1.5
+                whitespace-nowrap
+                transition
+                hover:text-[#4EA8FF]
+              "
+            >
+              <Mail className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
+
+              <span>
+                info@coolmateco.com
+              </span>
+            </a>
+
+            {/* OFFICE HOURS */}
+
+            <div
+              className="
+                flex
+                items-center
+                gap-1.5
+                whitespace-nowrap
+              "
+            >
+              <Clock className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
+
+              <span>
+                Mon - Sat 08:00 - 17:00
+              </span>
+            </div>
+
+          </div>
+
+          {/* FACEBOOK */}
+
+          <div className="hidden items-center sm:flex">
+
+            <a
+              href="https://www.facebook.com/profile.php?id=61580222981185"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="
+                flex
+                h-6
+                w-6
+                items-center
+                justify-center
+                rounded-full
+                bg-white
+                text-[18px]
+                font-extrabold
+                leading-none
+                text-[#28538A]
+                transition
+                duration-300
+                hover:scale-110
+              "
+            >
+              f
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
 
-      {/* Mobile Menu */}
-      {open && (
-        <nav className="border-t border-[#25282D] bg-[#101214] lg:hidden">
-          {navLinks.map((link) => (
+      {/* ========================================================= */}
+      {/* MAIN NAVBAR */}
+      {/* ========================================================= */}
+
+      <div className="border-b border-slate-200 bg-white">
+
+        <div
+          className="
+            flex
+            h-[82px]
+            w-full
+            items-center
+            justify-between
+            px-4
+            sm:h-[95px]
+            sm:px-6
+            lg:h-[110px]
+            lg:px-10
+            xl:px-12
+          "
+        >
+
+          {/* ===================================================== */}
+          {/* LOGO */}
+          {/* ===================================================== */}
+
+          <div className="flex min-w-0 items-center">
+
             <Link
-              key={link.name}
-              href={link.href}
-              scroll
-              onClick={() => setOpen(false)}
+              href="/"
+              className="flex shrink-0 items-center"
+            >
+
+              <Image
+                src="/images/logo/logo2.png"
+                alt="Coolmate Maintenance & Solutions Co."
+                width={700}
+                height={260}
+                priority
+                className="
+                  block
+                  h-[58px]
+                  w-auto
+                  shrink-0
+                  object-contain
+                  sm:h-[72px]
+                  lg:h-[105px]
+                "
+              />
+
+            </Link>
+
+          </div>
+
+          {/* ===================================================== */}
+          {/* DESKTOP NAVIGATION */}
+          {/* ===================================================== */}
+
+          <nav
+            className="
+              hidden
+              items-center
+              justify-center
+              gap-3
+              lg:flex
+            "
+          >
+
+            {/* HOME */}
+
+            <Link
+              href="/"
               className="
-                block border-b border-[#25282D]
-                px-6 py-4 text-lg font-medium
-                text-[#CBD5E1]
-                transition-all duration-300
-                hover:bg-[#15171A]
+                whitespace-nowrap
+                rounded-lg
+                px-4
+                py-3
+                text-[16px]
+                font-bold
+                text-slate-900
+                transition-all
+                duration-300
+                hover:bg-slate-50
                 hover:text-[#1683FF]
               "
             >
-              {link.name}
+              Home
             </Link>
-          ))}
-        </nav>
-      )}
+
+            {/* ABOUT US */}
+
+            <Link
+              href="/about"
+              className="
+                whitespace-nowrap
+                rounded-lg
+                px-4
+                py-3
+                text-[16px]
+                font-bold
+                text-slate-900
+                transition-all
+                duration-300
+                hover:bg-slate-50
+                hover:text-[#1683FF]
+              "
+            >
+              About Us
+            </Link>
+
+            {/* ================================================= */}
+            {/* SERVICES */}
+            {/* ================================================= */}
+
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+
+              <div className="flex items-center">
+
+                <Link
+                  href="/services"
+                  className="
+                    whitespace-nowrap
+                    rounded-lg
+                    px-4
+                    py-3
+                    text-[16px]
+                    font-bold
+                    text-slate-900
+                    transition-all
+                    duration-300
+                    hover:bg-slate-50
+                    hover:text-[#1683FF]
+                  "
+                >
+                  Our Services
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setServicesOpen((previous) => !previous)
+                  }
+                  aria-label="Toggle services dropdown"
+                  aria-expanded={servicesOpen}
+                  className="
+                    -ml-2
+                    rounded-md
+                    p-2
+                    text-slate-900
+                    transition
+                    hover:bg-slate-100
+                    hover:text-[#1683FF]
+                  "
+                >
+
+                  <ChevronDown
+                    className={`
+                      h-5
+                      w-5
+                      transition-transform
+                      duration-200
+                      ${
+                        servicesOpen
+                          ? "rotate-180"
+                          : ""
+                      }
+                    `}
+                  />
+
+                </button>
+
+              </div>
+
+              {/* SERVICES DROPDOWN */}
+
+              {servicesOpen && (
+                <div
+                  className="
+                    absolute
+                    left-1/2
+                    top-full
+                    z-[100]
+                    w-[370px]
+                    -translate-x-1/2
+                    pt-3
+                  "
+                >
+
+                  <div
+                    className="
+                      overflow-hidden
+                      rounded-xl
+                      border
+                      border-slate-200
+                      bg-white
+                      shadow-[0_15px_45px_rgba(0,0,0,0.18)]
+                    "
+                  >
+
+                    <div className="py-2">
+
+                      {serviceLinks.map((service) => (
+
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          onClick={() =>
+                            setServicesOpen(false)
+                          }
+                          className="
+                            group
+                            flex
+                            items-center
+                            gap-3
+                            px-5
+                            py-4
+                            text-sm
+                            font-semibold
+                            text-slate-700
+                            transition-all
+                            duration-200
+                            hover:bg-[#08213D]
+                            hover:text-white
+                          "
+                        >
+
+                          <span
+                            className="
+                              h-2
+                              w-2
+                              shrink-0
+                              rounded-full
+                              bg-[#1683FF]
+                              transition-transform
+                              duration-200
+                              group-hover:scale-125
+                            "
+                          />
+
+                          <span>
+                            {service.name}
+                          </span>
+
+                        </Link>
+
+                      ))}
+
+                    </div>
+
+                  </div>
+
+                </div>
+              )}
+
+            </div>
+
+            {/* PROJECTS */}
+
+            <Link
+              href="/projects"
+              className="
+                whitespace-nowrap
+                rounded-lg
+                px-4
+                py-3
+                text-[16px]
+                font-bold
+                text-slate-900
+                transition-all
+                duration-300
+                hover:bg-slate-50
+                hover:text-[#1683FF]
+              "
+            >
+              Projects
+            </Link>
+
+            {/* CLIENTS */}
+
+            <Link
+              href="/clients"
+              className="
+                whitespace-nowrap
+                rounded-lg
+                px-4
+                py-3
+                text-[16px]
+                font-bold
+                text-slate-900
+                transition-all
+                duration-300
+                hover:bg-slate-50
+                hover:text-[#1683FF]
+              "
+            >
+              Clients
+            </Link>
+
+            {/* CONTACT US */}
+
+            <Link
+              href="/contact"
+              className="
+                whitespace-nowrap
+                rounded-lg
+                px-4
+                py-3
+                text-[16px]
+                font-bold
+                text-slate-900
+                transition-all
+                duration-300
+                hover:bg-slate-50
+                hover:text-[#1683FF]
+              "
+            >
+              Contact Us
+            </Link>
+
+          </nav>
+
+          {/* ===================================================== */}
+          {/* MOBILE RIGHT SIDE */}
+          {/* ===================================================== */}
+
+          <div
+            className="
+              flex
+              items-center
+              justify-end
+              lg:hidden
+            "
+          >
+
+            {/* HAMBURGER */}
+
+            <button
+              type="button"
+              onClick={() => setOpen(!open)}
+              className="
+                flex
+                h-11
+                w-11
+                items-center
+                justify-center
+                rounded-lg
+                text-slate-900
+                transition
+                hover:bg-slate-100
+              "
+              aria-label="Toggle menu"
+              aria-expanded={open}
+            >
+
+              {open ? (
+                <X className="h-7 w-7" />
+              ) : (
+                <Menu className="h-7 w-7" />
+              )}
+
+            </button>
+
+          </div>
+
+        </div>
+
+        {/* ========================================================= */}
+        {/* MOBILE MENU */}
+        {/* ========================================================= */}
+
+        {open && (
+          <nav
+            className="
+              border-t
+              border-slate-200
+              bg-white
+              shadow-lg
+              lg:hidden
+            "
+          >
+
+            {/* HOME */}
+
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className="
+                block
+                border-b
+                border-slate-100
+                px-6
+                py-4
+                text-base
+                font-bold
+                text-slate-900
+                transition
+                hover:bg-slate-50
+                hover:text-[#1683FF]
+              "
+            >
+              Home
+            </Link>
+
+            {/* ABOUT US */}
+
+            <Link
+              href="/about"
+              onClick={() => setOpen(false)}
+              className="
+                block
+                border-b
+                border-slate-100
+                px-6
+                py-4
+                text-base
+                font-bold
+                text-slate-900
+                transition
+                hover:bg-slate-50
+                hover:text-[#1683FF]
+              "
+            >
+              About Us
+            </Link>
+
+            {/* SERVICES */}
+
+            <div className="border-b border-slate-100">
+
+              <div className="flex items-center justify-between">
+
+                <Link
+                  href="/services"
+                  onClick={() => setOpen(false)}
+                  className="
+                    flex-1
+                    px-6
+                    py-4
+                    text-base
+                    font-bold
+                    text-slate-900
+                    transition
+                    hover:text-[#1683FF]
+                  "
+                >
+                  Our Services
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setServicesOpen((previous) => !previous)
+                  }
+                  aria-label="Toggle services"
+                  aria-expanded={servicesOpen}
+                  className="
+                    px-6
+                    py-4
+                    text-slate-900
+                    transition
+                    hover:text-[#1683FF]
+                  "
+                >
+
+                  <ChevronDown
+                    className={`
+                      h-5
+                      w-5
+                      transition-transform
+                      duration-200
+                      ${
+                        servicesOpen
+                          ? "rotate-180"
+                          : ""
+                      }
+                    `}
+                  />
+
+                </button>
+
+              </div>
+
+              {servicesOpen && (
+                <div className="bg-slate-50">
+
+                  {serviceLinks.map((service) => (
+
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      onClick={() => {
+                        setOpen(false);
+                        setServicesOpen(false);
+                      }}
+                      className="
+                        flex
+                        items-center
+                        gap-3
+                        border-t
+                        border-slate-200
+                        px-8
+                        py-3.5
+                        text-sm
+                        font-semibold
+                        text-slate-700
+                        transition
+                        hover:bg-white
+                        hover:text-[#1683FF]
+                      "
+                    >
+
+                      <span
+                        className="
+                          h-2
+                          w-2
+                          shrink-0
+                          rounded-full
+                          bg-[#1683FF]
+                        "
+                      />
+
+                      {service.name}
+
+                    </Link>
+
+                  ))}
+
+                </div>
+              )}
+
+            </div>
+
+            {/* PROJECTS */}
+
+            <Link
+              href="/projects"
+              onClick={() => setOpen(false)}
+              className="
+                block
+                border-b
+                border-slate-100
+                px-6
+                py-4
+                text-base
+                font-bold
+                text-slate-900
+                transition
+                hover:bg-slate-50
+                hover:text-[#1683FF]
+              "
+            >
+              Projects
+            </Link>
+
+            {/* CLIENTS */}
+
+            <Link
+              href="/clients"
+              onClick={() => setOpen(false)}
+              className="
+                block
+                border-b
+                border-slate-100
+                px-6
+                py-4
+                text-base
+                font-bold
+                text-slate-900
+                transition
+                hover:bg-slate-50
+                hover:text-[#1683FF]
+              "
+            >
+              Clients
+            </Link>
+
+            {/* CONTACT US */}
+
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="
+                block
+                border-b
+                border-slate-100
+                px-6
+                py-4
+                text-base
+                font-bold
+                text-slate-900
+                transition
+                hover:bg-slate-50
+                hover:text-[#1683FF]
+              "
+            >
+              Contact Us
+            </Link>
+
+          </nav>
+        )}
+
+      </div>
+
     </header>
   );
 }

@@ -1,130 +1,358 @@
-import Image from "next/image";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+"use client";
+
+import { useEffect, useState } from "react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+const heroImages = [
+  "/images/hero/hero-main.jpg",
+  "/images/hero/hero-1.png",
+  "/images/hero/hero-2.jpg",
+  "/images/hero/hero-3.jpg",
+  "/images/hero/hero-4.jpg",
+];
 
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((previous) => {
+        return (previous + 1) % heroImages.length;
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="home"
-      className="scroll-mt-24 bg-[#090A0C] lg:scroll-mt-32"
+      className="
+        relative
+        min-h-[650px]
+        overflow-hidden
+        lg:min-h-[760px]
+      "
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-14 lg:min-h-[90vh] lg:grid-cols-2 lg:gap-16 lg:py-20">
+      {/* ================= BACKGROUND IMAGES ================= */}
 
-        {/* LEFT */}
-        <div className="max-w-xl">
-          {/* Company Name */}
-          <p className="mb-4 text-xl font-bold tracking-wide text-[#1683FF] lg:mb-5 lg:text-2xl">
-            Coolmate Maintenance & Solutions Co.
-          </p>
+      {heroImages.map((image, index) => (
+        <div
+          key={image}
+          className={`
+            absolute
+            inset-0
+            bg-cover
+            bg-center
+            transition-all
+            duration-[5000ms]
+            ease-out
+            ${
+              index === currentImage
+                ? "scale-110 opacity-100"
+                : "scale-100 opacity-0"
+            }
+          `}
+          style={{
+            backgroundImage: `url("${image}")`,
+          }}
+        />
+      ))}
 
-          {/* Heading */}
-          <h1 className="text-4xl font-bold leading-[1.1] text-[#F8FAFC] md:text-5xl lg:text-6xl">
-            Reliable Air Conditioning
-            <span className="block text-[#1683FF]">
-              Solutions
-            </span>
-            for Homes & Businesses
-          </h1>
+      {/* ================= LIGHTER BLUE OVERLAY ================= */}
 
-          {/* Description */}
-          <p className="mt-6 text-base leading-7 text-[#94A3B8] lg:mt-8 lg:text-lg lg:leading-8">
-            Professional preventive maintenance, repair, and
-            troubleshooting of VRF and Split-Type air conditioning
-            systems for residential, commercial, and industrial
-            clients throughout the Philippines.
-          </p>
+      <div className="absolute inset-0 bg-[#08213D]/35" />
 
-          {/* Call to Action */}
-          <div className="mt-8 lg:mt-10">
-            <a
-              href="mailto:info@coolmateco.com?subject=Request%20for%20Air%20Conditioning%20Quotation&body=Hello%20Coolmate,%0A%0AI%20would%20like%20to%20request%20a%20quotation.%0A%0AName:%0ACompany:%0ALocation:%0AContact%20Number:%0A%0AThank%20you."
-              className="group inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#1683FF] px-8 py-4 text-lg font-semibold text-white shadow-[0_0_30px_rgba(22,131,255,0.20)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#2F8FFF] hover:shadow-[0_0_40px_rgba(22,131,255,0.40)] lg:w-auto"
+      {/* ================= GRADIENT FOR TEXT READABILITY ================= */}
+
+      <div className="absolute inset-0 bg-gradient-to-r from-[#061A31]/45 via-[#08213D]/30 to-[#08213D]/15" />
+
+      {/* ================= HERO CONTENT ================= */}
+
+      <div
+        className="
+          relative
+          z-10
+          flex
+          min-h-[650px]
+          items-start
+          pt-20
+          pb-20
+          sm:items-center
+          sm:py-0
+          lg:min-h-[760px]
+        "
+      >
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6">
+
+          <div
+            className="
+              mx-auto
+              max-w-5xl
+              text-center
+            "
+          >
+
+            {/* ================= COMPANY NAME ================= */}
+
+            <p
+              className="
+                mb-4
+                text-sm
+                font-extrabold
+                uppercase
+                tracking-[0.22em]
+                text-[#4EA8FF]
+                sm:mb-5
+                sm:text-base
+                sm:tracking-[0.25em]
+                lg:text-lg
+              "
             >
-              Request a Free Quote
+              Coolmate Maintenance & Solutions Co.
+            </p>
 
-              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-          </div>
+            {/* ================= MAIN HEADING ================= */}
 
-          {/* Trust Indicators */}
-          <div className="mt-8 flex flex-col gap-4 text-[#CBD5E1] lg:mt-10 lg:gap-5">
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="h-5 w-5 shrink-0 text-[#1683FF]" />
-              <span>Certified Technicians</span>
+            <h1
+              className="
+                text-4xl
+                font-bold
+                leading-[1.08]
+                text-white
+                sm:text-5xl
+                sm:leading-tight
+                lg:text-6xl
+                xl:text-7xl
+              "
+            >
+              Reliable Air Conditioning
+
+              <span className="block text-[#1683FF]">
+                Solutions
+              </span>
+
+              for Homes & Businesses
+            </h1>
+
+            {/* ================= DESCRIPTION ================= */}
+
+            <p
+              className="
+                mx-auto
+                mt-5
+                max-w-4xl
+                text-sm
+                leading-6
+                text-slate-200
+                sm:mt-6
+                sm:text-lg
+                sm:leading-8
+                lg:mt-8
+                lg:text-xl
+              "
+            >
+              Professional preventive maintenance, repair, and
+              troubleshooting of VRF and Split-Type air conditioning
+              systems for residential, commercial, and industrial
+              clients throughout the Philippines.
+            </p>
+
+            {/* ================= CTA BUTTONS ================= */}
+
+            <div
+              className="
+                mt-7
+                flex
+                flex-col
+                items-center
+                justify-center
+                gap-3
+                sm:mt-8
+                sm:flex-row
+                sm:gap-4
+                lg:mt-10
+              "
+            >
+
+              {/* PRIMARY CTA */}
+
+              <a
+                href="mailto:info@coolmateco.com?subject=Request%20for%20Air%20Conditioning%20Quotation"
+                className="
+                  inline-flex
+                  w-full
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-full
+                  bg-[#1683FF]
+                  px-8
+                  py-3.5
+                  text-sm
+                  font-bold
+                  text-white
+                  shadow-xl
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:bg-[#0B72E5]
+                  hover:shadow-[0_10px_40px_rgba(22,131,255,0.35)]
+                  sm:w-auto
+                  sm:px-8
+                  sm:py-4
+                  sm:text-base
+                "
+              >
+                Request a Free Quote
+
+                <ArrowRight className="h-5 w-5" />
+              </a>
+
+              {/* SECONDARY CTA */}
+
+              <a
+                href="/#contact"
+                className="
+                  inline-flex
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-full
+                  border-2
+                  border-white/80
+                  bg-white/5
+                  px-8
+                  py-3.5
+                  text-sm
+                  font-bold
+                  text-white
+                  backdrop-blur-sm
+                  transition-all
+                  duration-300
+                  hover:bg-white
+                  hover:text-[#08213D]
+                  sm:w-auto
+                  sm:px-8
+                  sm:py-4
+                  sm:text-base
+                "
+              >
+                Get a Free Consultation
+              </a>
+
             </div>
 
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="h-5 w-5 shrink-0 text-[#1683FF]" />
-              <span>Residential & Commercial</span>
+            {/* ================= TRUST INDICATORS ================= */}
+
+            <div
+              className="
+                mt-8
+                flex
+                flex-wrap
+                items-center
+                justify-center
+                gap-x-4
+                gap-y-2
+                text-xs
+                text-slate-200
+                sm:mt-10
+                sm:gap-x-6
+                sm:gap-y-3
+                sm:text-sm
+                lg:mt-12
+              "
+            >
+
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <CheckCircle2
+                  className="
+                    h-4
+                    w-4
+                    text-[#1683FF]
+                    sm:h-5
+                    sm:w-5
+                  "
+                />
+
+                <span>
+                  Certified Technicians
+                </span>
+              </div>
+
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <CheckCircle2
+                  className="
+                    h-4
+                    w-4
+                    text-[#1683FF]
+                    sm:h-5
+                    sm:w-5
+                  "
+                />
+
+                <span>
+                  Residential & Commercial
+                </span>
+              </div>
+
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <CheckCircle2
+                  className="
+                    h-4
+                    w-4
+                    text-[#1683FF]
+                    sm:h-5
+                    sm:w-5
+                  "
+                />
+
+                <span>
+                  Quality Workmanship
+                </span>
+              </div>
+
             </div>
 
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="h-5 w-5 shrink-0 text-[#1683FF]" />
-              <span>24/7 Customer Support</span>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT */}
-        <div className="grid grid-cols-2 gap-3 lg:gap-4">
-
-          {/* Main Image */}
-          <div className="group col-span-2 overflow-hidden rounded-3xl border border-[#25282D] bg-[#15171A] shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
-            <Image
-              src="/images/hero/hero-main.jpg"
-              alt="Coolmate Air Conditioning Services"
-              width={900}
-              height={500}
-              priority
-              className="h-[240px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[300px] lg:h-[320px]"
-            />
-          </div>
-
-          {/* Image 1 */}
-          <div className="group overflow-hidden rounded-2xl border border-[#25282D] bg-[#15171A] shadow-lg">
-            <Image
-              src="/images/hero/hero-1.jpg"
-              alt="Air Conditioning Maintenance"
-              width={400}
-              height={300}
-              className="h-[120px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[150px] lg:h-[180px]"
-            />
-          </div>
-
-          {/* Image 2 */}
-          <div className="group overflow-hidden rounded-2xl border border-[#25282D] bg-[#15171A] shadow-lg">
-            <Image
-              src="/images/hero/hero-2.jpg"
-              alt="Preventive Maintenance"
-              width={400}
-              height={300}
-              className="h-[120px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[150px] lg:h-[180px]"
-            />
-          </div>
-
-          {/* Image 3 */}
-          <div className="group overflow-hidden rounded-2xl border border-[#25282D] bg-[#15171A] shadow-lg">
-            <Image
-              src="/images/hero/hero-3.jpg"
-              alt="VRF System Troubleshooting"
-              width={400}
-              height={300}
-              className="h-[120px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[150px] lg:h-[180px]"
-            />
-          </div>
-
-          {/* Image 4 */}
-          <div className="group overflow-hidden rounded-2xl border border-[#25282D] bg-[#15171A] shadow-lg">
-            <Image
-              src="/images/hero/hero-4.jpg"
-              alt="Commercial Air Conditioning Repair"
-              width={400}
-              height={300}
-              className="h-[120px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[150px] lg:h-[180px]"
-            />
           </div>
 
         </div>
       </div>
+
+      {/* ================= SLIDE INDICATORS ================= */}
+
+      <div
+        className="
+          absolute
+          bottom-5
+          left-1/2
+          z-20
+          flex
+          -translate-x-1/2
+          gap-2
+          sm:bottom-7
+        "
+      >
+        {heroImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImage(index)}
+            aria-label={`Show hero image ${index + 1}`}
+            className={`
+              h-2
+              rounded-full
+              transition-all
+              duration-300
+              ${
+                index === currentImage
+                  ? "w-8 bg-[#1683FF]"
+                  : "w-2 bg-white/50 hover:bg-white"
+              }
+            `}
+          />
+        ))}
+      </div>
+
     </section>
   );
 }
