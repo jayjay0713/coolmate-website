@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -10,6 +11,40 @@ import {
   Building2,
   Settings,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Aircon Sales & Installation Philippines",
+
+  description:
+    "Professional air conditioning sales and installation services for residential, commercial, and industrial clients in the Philippines. Coolmate provides system selection support, installation, testing, commissioning, and air conditioning solutions.",
+
+  alternates: {
+    canonical: "https://www.coolmateco.com/services/installation",
+  },
+
+  openGraph: {
+    title: "Aircon Sales & Installation Philippines",
+    description:
+      "Professional air conditioning sales and installation services for residential, commercial, and industrial clients in the Philippines.",
+    url: "https://www.coolmateco.com/services/installation",
+    siteName: "Coolmate Maintenance & Solutions Co.",
+    locale: "en_PH",
+    type: "website",
+    images: [
+      {
+        url: "/images/services/installation-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Air conditioning installation service",
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function AirConditioningInstallationPage() {
   return (

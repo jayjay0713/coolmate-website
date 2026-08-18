@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -7,6 +8,40 @@ import {
   ShieldCheck,
   Wrench,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Aircon Preventive Maintenance Philippines",
+
+  description:
+    "Professional air conditioning and VRF preventive maintenance services for residential, commercial, and industrial clients in the Philippines. Coolmate helps maintain reliable performance, identify potential problems, reduce downtime, and support efficient system operation.",
+
+  alternates: {
+    canonical: "https://www.coolmateco.com/services/preventive-maintenance",
+  },
+
+  openGraph: {
+    title: "Aircon Preventive Maintenance Philippines",
+    description:
+      "Professional air conditioning and VRF preventive maintenance services for residential, commercial, and industrial clients in the Philippines.",
+    url: "https://www.coolmateco.com/services/preventive-maintenance",
+    siteName: "Coolmate Maintenance & Solutions Co.",
+    locale: "en_PH",
+    type: "website",
+    images: [
+      {
+        url: "/images/services/preventive-maintenance-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Air conditioning preventive maintenance service",
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function PreventiveMaintenancePage() {
   return (

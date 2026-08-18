@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -10,6 +11,40 @@ import {
   Wrench,
   Zap,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Aircon Troubleshooting Services Philippines",
+
+  description:
+    "Professional air conditioning troubleshooting and diagnostic services for residential, commercial, and industrial clients in the Philippines. Coolmate investigates cooling, electrical, drainage, control, airflow, and operating problems to help identify the cause and recommend the appropriate solution.",
+
+  alternates: {
+    canonical: "https://www.coolmateco.com/services/troubleshooting",
+  },
+
+  openGraph: {
+    title: "Aircon Troubleshooting Services Philippines",
+    description:
+      "Professional air conditioning troubleshooting and diagnostic services for residential, commercial, and industrial clients in the Philippines.",
+    url: "https://www.coolmateco.com/services/troubleshooting",
+    siteName: "Coolmate Maintenance & Solutions Co.",
+    locale: "en_PH",
+    type: "website",
+    images: [
+      {
+        url: "/images/services/troubleshooting-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Air conditioning troubleshooting and diagnostics",
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function AirConditioningTroubleshootingPage() {
   return (

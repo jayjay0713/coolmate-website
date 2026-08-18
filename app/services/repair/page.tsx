@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -8,6 +9,40 @@ import {
   ShieldCheck,
   Wrench,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Aircon Repair Services Philippines",
+
+  description:
+    "Professional air conditioning repair services for residential, commercial, and industrial clients in the Philippines. Coolmate diagnoses cooling problems, leaks, unusual operation, electrical issues, component failures, and other air conditioning performance problems.",
+
+  alternates: {
+    canonical: "https://www.coolmateco.com/services/repair",
+  },
+
+  openGraph: {
+    title: "Aircon Repair Services Philippines",
+    description:
+      "Professional air conditioning repair services for residential, commercial, and industrial clients in the Philippines.",
+    url: "https://www.coolmateco.com/services/repair",
+    siteName: "Coolmate Maintenance & Solutions Co.",
+    locale: "en_PH",
+    type: "website",
+    images: [
+      {
+        url: "/images/services/repair-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Air conditioning repair service",
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function AirConditioningRepairPage() {
   return (
