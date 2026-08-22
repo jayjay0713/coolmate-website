@@ -4,6 +4,8 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
+  ShieldCheck,
+  Clock3,
   Wrench,
   Sparkles,
   Search,
@@ -13,54 +15,99 @@ import {
 
 const services = [
   {
+    number: "01",
     title: "Air Conditioning Preventive Maintenance",
     description:
-      "Keep your air conditioning systems running efficiently, reliably, and safely with professional preventive maintenance.",
+      "Planned servicing that keeps failures from ever happening.",
     image: "/images/services/preventive-maintenance-hero.jpg",
     href: "/services/preventive-maintenance",
-    icon: Settings,
+    icon: ShieldCheck,
+    points: [
+      "Scheduled quarterly or monthly servicing",
+      "Full electrical and refrigerant diagnostics",
+      "Digital service report per unit after every visit",
+      "Extends equipment life by up to 40%",
+    ],
+    duration: "Half to full day, depending on unit count",
+    warranty: "30-day workmanship warranty on every serviced unit",
   },
+
   {
+    number: "02",
     title: "Air Conditioning General Cleaning",
     description:
-      "Professional cleaning to help maintain cleaner air conditioning systems, proper airflow, and reliable drainage.",
+      "Deep chemical cleaning for fresher air and lower bills.",
     image: "/images/services/cleaning-hero.jpg",
     href: "/services/cleaning",
     icon: Sparkles,
+    points: [
+      "Foaming coil cleaner and antibacterial treatment",
+      "Noticeably colder air and lower power draw",
+      "High-pressure blower wheel and drain cleaning",
+      "Ideal before turnover, audits or peak summer",
+    ],
+    duration: "45 – 90 minutes per unit",
+    warranty: "14-day cleanliness and performance guarantee",
   },
+
   {
+    number: "03",
     title: "Air Conditioning Repair",
     description:
-      "Professional repair services for air conditioning systems experiencing cooling, electrical, mechanical, and operating problems.",
+      "Fast, honest diagnosis and repairs that actually last.",
     image: "/images/services/repair-hero.jpg",
     href: "/services/repair",
     icon: Wrench,
+    points: [
+      "Same-day response for Metro Manila sites",
+      "Transparent quotation before any work begins",
+      "Certified technicians with years of experience",
+      "Genuine or OEM-equivalent replacement parts",
+    ],
+    duration: "Same or next business day",
+    warranty: "90-day parts and labor warranty on major repairs",
   },
+
   {
+    number: "04",
     title: "Air Conditioning Troubleshooting",
     description:
-      "System troubleshooting and diagnostics to help identify the causes of cooling, electrical, drainage, control, and operating problems.",
+      "Find the hidden problem before it becomes a replacement.",
     image: "/images/services/troubleshooting-hero.jpg",
     href: "/services/troubleshooting",
     icon: Search,
+    points: [
+      "Instrument-based diagnostics, not trial and error",
+      "Whole-system review including ducting and power supply",
+      "Error code interpretation for all major brands",
+      "Root-cause report with prioritized fix list",
+    ],
+    duration: "1 – 2 hours per system",
+    warranty: "Diagnostic fee credited toward approved repairs",
   },
+
   {
+    number: "05",
     title: "Air Conditioning Sales & Installation",
     description:
-      "Professional air conditioning sales and installation services for residential, commercial, and industrial applications.",
+      "Right-sized units, installed cleanly and commissioned properly.",
     image: "/images/services/installation-hero.jpg",
     href: "/services/installation",
     icon: ShoppingCart,
+    points: [
+      "Heat load computation and unit sizing",
+      "Clean routing of piping, drain and electrical lines",
+      "Split, window, cassette, floor-mounted and VRF systems",
+      "Commissioning, testing and user orientation",
+    ],
+    duration: "1 day for residential, project-based for commercial",
+    warranty: "1-year installation warranty plus manufacturer coverage",
   },
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      {/* ===================================================== */}
-      {/* NAVBAR */}
-      {/* ===================================================== */}
-
       <Navbar />
 
       <main className="bg-white">
@@ -77,8 +124,6 @@ export default function ServicesPage() {
             lg:min-h-[520px]
           "
         >
-          {/* Background Photo */}
-
           <div
             className="
               absolute
@@ -92,8 +137,6 @@ export default function ServicesPage() {
             }}
           />
 
-          {/* Dark Navy Overlay */}
-
           <div
             className="
               absolute
@@ -101,8 +144,6 @@ export default function ServicesPage() {
               bg-[#08213D]/55
             "
           />
-
-          {/* Gradient */}
 
           <div
             className="
@@ -114,8 +155,6 @@ export default function ServicesPage() {
               to-transparent
             "
           />
-
-          {/* Hero Content */}
 
           <div
             className="
@@ -138,8 +177,6 @@ export default function ServicesPage() {
             >
               <div className="max-w-4xl">
 
-                {/* Blue Accent */}
-
                 <div
                   className="
                     mb-6
@@ -149,8 +186,6 @@ export default function ServicesPage() {
                     bg-[#1683FF]
                   "
                 />
-
-                {/* Heading */}
 
                 <h1
                   className="
@@ -168,8 +203,6 @@ export default function ServicesPage() {
                     Services
                   </span>
                 </h1>
-
-                {/* Description */}
 
                 <p
                   className="
@@ -191,6 +224,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+
 
         {/* ===================================================== */}
         {/* INTRODUCTION */}
@@ -252,11 +286,12 @@ export default function ServicesPage() {
 
         </section>
 
+
         {/* ===================================================== */}
-        {/* SERVICES */}
+        {/* SERVICES - REFERENCE STYLE */}
         {/* ===================================================== */}
 
-        <section className="bg-slate-50 py-16 lg:py-24">
+        <section className="bg-white py-8 pb-20 lg:py-12 lg:pb-28">
 
           <div
             className="
@@ -267,21 +302,11 @@ export default function ServicesPage() {
             "
           >
 
-            {/* ================================================= */}
-            {/* FIRST ROW - 3 CARDS */}
-            {/* ================================================= */}
+            <div className="space-y-10 lg:space-y-12">
 
-            <div
-              className="
-                grid
-                gap-8
-                md:grid-cols-2
-                lg:grid-cols-3
-              "
-            >
-
-              {services.slice(0, 3).map((service) => {
+              {services.map((service, index) => {
                 const Icon = service.icon;
+                const imageLeft = index % 2 === 0;
 
                 return (
                   <article
@@ -289,286 +314,300 @@ export default function ServicesPage() {
                     className="
                       group
                       overflow-hidden
-                      rounded-2xl
-                      border
-                      border-slate-200
+                      rounded-3xl
                       bg-white
-                      shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-                      transition-all
-                      duration-300
-                      hover:-translate-y-2
-                      hover:border-[#1683FF]/40
-                      hover:shadow-[0_20px_45px_rgba(0,0,0,0.14)]
                     "
                   >
 
-                    {/* ========================================= */}
-                    {/* IMAGE */}
-                    {/* ========================================= */}
-
                     <div
-                      className="
-                        relative
-                        h-[250px]
-                        overflow-hidden
-                      "
+                      className={`
+                        grid
+                        items-center
+                        gap-8
+                        lg:grid-cols-2
+                        lg:gap-10
+                        xl:gap-12
+                        ${
+                          imageLeft
+                            ? ""
+                            : "lg:[&>div:first-child]:order-2"
+                        }
+                      `}
                     >
 
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="
-                          h-full
-                          w-full
-                          object-cover
-                          transition-transform
-                          duration-700
-                          group-hover:scale-105
-                        "
-                      />
-
-                      {/* Image Overlay */}
+                      {/* ================================================= */}
+                      {/* IMAGE */}
+                      {/* ================================================= */}
 
                       <div
                         className="
-                          absolute
-                          inset-0
-                          bg-gradient-to-t
-                          from-[#08213D]/75
-                          via-[#08213D]/10
-                          to-transparent
-                        "
-                      />
-
-                      {/* Icon */}
-
-                      <div
-                        className="
-                          absolute
-                          bottom-5
-                          left-5
-                          flex
-                          h-12
-                          w-12
-                          items-center
-                          justify-center
-                          rounded-xl
-                          bg-[#1683FF]
-                          text-white
-                          shadow-lg
+                          relative
+                          h-[300px]
+                          overflow-hidden
+                          rounded-2xl
+                          sm:h-[360px]
+                          lg:h-[385px]
+                          xl:h-[420px]
                         "
                       >
-                        <Icon className="h-6 w-6" />
+
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="
+                            absolute
+                            inset-0
+                            h-full
+                            w-full
+                            object-cover
+                            transition-transform
+                            duration-700
+                            group-hover:scale-[1.03]
+                          "
+                        />
+
+                        {/* Soft image overlay */}
+
+                        <div
+                          className="
+                            absolute
+                            inset-0
+                            bg-gradient-to-t
+                            from-[#08213D]/25
+                            via-transparent
+                            to-transparent
+                          "
+                        />
+
+                        {/* Floating icon */}
+
+                        <div
+                          className="
+                            absolute
+                            left-5
+                            top-5
+                            flex
+                            h-12
+                            w-12
+                            items-center
+                            justify-center
+                            rounded-xl
+                            bg-white
+                            shadow-[0_8px_25px_rgba(0,0,0,0.15)]
+                            lg:left-6
+                            lg:top-6
+                          "
+                        >
+                          <Icon
+                            className="
+                              h-6
+                              w-6
+                              text-[#1683FF]
+                            "
+                          />
+                        </div>
+
                       </div>
 
-                    </div>
 
-                    {/* ========================================= */}
-                    {/* CONTENT */}
-                    {/* ========================================= */}
+                      {/* ================================================= */}
+                      {/* CONTENT */}
+                      {/* ================================================= */}
 
-                    <div className="p-7">
+                      <div className="py-2 lg:py-4">
 
-                      <h3
-                        className="
-                          text-xl
-                          font-bold
-                          leading-snug
-                          text-slate-900
-                        "
-                      >
-                        {service.title}
-                      </h3>
+                        {/* SERVICE NUMBER */}
 
-                      <p
-                        className="
-                          mt-4
-                          min-h-[96px]
-                          text-base
-                          leading-7
-                          text-slate-600
-                        "
-                      >
-                        {service.description}
-                      </p>
+                        <p
+                          className="
+                            text-xs
+                            font-bold
+                            uppercase
+                            tracking-[0.24em]
+                            text-[#1683FF]
+                          "
+                        >
+                          Service {service.number}
+                        </p>
 
-                      <Link
-                        href={service.href}
-                        className="
-                          mt-6
-                          inline-flex
-                          items-center
-                          gap-2
-                          font-bold
-                          text-[#1683FF]
-                          transition-all
-                          duration-300
-                          hover:gap-3
-                          hover:text-[#0B72E5]
-                        "
-                      >
-                        Learn More
 
-                        <ArrowRight className="h-5 w-5" />
-                      </Link>
+                        {/* TITLE */}
 
-                    </div>
+                        <h3
+                          className="
+                            mt-4
+                            text-3xl
+                            font-extrabold
+                            leading-[1.15]
+                            text-[#08213D]
+                            sm:text-4xl
+                            lg:text-[2.35rem]
+                            xl:text-4xl
+                          "
+                        >
+                          {service.title}
+                        </h3>
 
-                  </article>
-                );
-              })}
 
-            </div>
+                        {/* DESCRIPTION */}
 
-            {/* ================================================= */}
-            {/* SECOND ROW - 2 CENTERED CARDS */}
-            {/* ================================================= */}
+                        <p
+                          className="
+                            mt-5
+                            max-w-2xl
+                            text-base
+                            leading-7
+                            text-[#31537A]
+                            lg:text-lg
+                            lg:leading-8
+                          "
+                        >
+                          {service.description}
+                        </p>
 
-            <div
-              className="
-                mt-8
-                flex
-                flex-col
-                items-center
-                justify-center
-                gap-8
-                md:flex-row
-              "
-            >
 
-              {services.slice(3, 5).map((service) => {
-                const Icon = service.icon;
+                        {/* ================================================= */}
+                        {/* CHECKLIST */}
+                        {/* ================================================= */}
 
-                return (
-                  <article
-                    key={service.href}
-                    className="
-                      group
-                      w-full
-                      overflow-hidden
-                      rounded-2xl
-                      border
-                      border-slate-200
-                      bg-white
-                      shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-                      transition-all
-                      duration-300
-                      hover:-translate-y-2
-                      hover:border-[#1683FF]/40
-                      hover:shadow-[0_20px_45px_rgba(0,0,0,0.14)]
-                      md:w-[calc(33.333%-1rem)]
-                    "
-                  >
+                        <div
+                          className="
+                            mt-6
+                            grid
+                            gap-x-8
+                            gap-y-4
+                            sm:grid-cols-2
+                          "
+                        >
 
-                    {/* ========================================= */}
-                    {/* IMAGE */}
-                    {/* ========================================= */}
+                          {service.points.map((point) => (
+                            <div
+                              key={point}
+                              className="
+                                flex
+                                items-start
+                                gap-3
+                                text-sm
+                                leading-6
+                                text-[#31537A]
+                              "
+                            >
 
-                    <div
-                      className="
-                        relative
-                        h-[250px]
-                        overflow-hidden
-                      "
-                    >
+                              <CheckCircle2
+                                className="
+                                  mt-0.5
+                                  h-4
+                                  w-4
+                                  shrink-0
+                                  text-[#1683FF]
+                                "
+                              />
 
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="
-                          h-full
-                          w-full
-                          object-cover
-                          transition-transform
-                          duration-700
-                          group-hover:scale-105
-                        "
-                      />
+                              <span>
+                                {point}
+                              </span>
 
-                      {/* Image Overlay */}
+                            </div>
+                          ))}
 
-                      <div
-                        className="
-                          absolute
-                          inset-0
-                          bg-gradient-to-t
-                          from-[#08213D]/75
-                          via-[#08213D]/10
-                          to-transparent
-                        "
-                      />
+                        </div>
 
-                      {/* Icon */}
 
-                      <div
-                        className="
-                          absolute
-                          bottom-5
-                          left-5
-                          flex
-                          h-12
-                          w-12
-                          items-center
-                          justify-center
-                          rounded-xl
-                          bg-[#1683FF]
-                          text-white
-                          shadow-lg
-                        "
-                      >
-                        <Icon className="h-6 w-6" />
+                        {/* ================================================= */}
+                        {/* DURATION + WARRANTY */}
+                        {/* ================================================= */}
+
+                        <div className="mt-6 space-y-3">
+
+                          <div
+                            className="
+                              flex
+                              items-start
+                              gap-3
+                              text-sm
+                              text-[#31537A]
+                            "
+                          >
+
+                            <Clock3
+                              className="
+                                mt-0.5
+                                h-4
+                                w-4
+                                shrink-0
+                                text-[#31537A]
+                              "
+                            />
+
+                            <span>
+                              {service.duration}
+                            </span>
+
+                          </div>
+
+
+                          <div
+                            className="
+                              flex
+                              items-start
+                              gap-3
+                              text-sm
+                              text-[#31537A]
+                            "
+                          >
+
+                            <ShieldCheck
+                              className="
+                                mt-0.5
+                                h-4
+                                w-4
+                                shrink-0
+                                text-[#31537A]
+                              "
+                            />
+
+                            <span>
+                              {service.warranty}
+                            </span>
+
+                          </div>
+
+                        </div>
+
+
+                        {/* ================================================= */}
+                        {/* BUTTON */}
+                        {/* ================================================= */}
+
+                        <Link
+                          href={service.href}
+                          className="
+                            mt-7
+                            inline-flex
+                            items-center
+                            gap-2
+                            rounded-full
+                            bg-[#1683FF]
+                            px-7
+                            py-3.5
+                            text-sm
+                            font-bold
+                            text-white
+                            shadow-[0_8px_25px_rgba(22,131,255,0.20)]
+                            transition-all
+                            duration-300
+                            hover:-translate-y-0.5
+                            hover:bg-[#0B72E5]
+                            hover:gap-3
+                            hover:shadow-[0_12px_30px_rgba(22,131,255,0.30)]
+                          "
+                        >
+                          View service details
+
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+
                       </div>
-
-                    </div>
-
-                    {/* ========================================= */}
-                    {/* CONTENT */}
-                    {/* ========================================= */}
-
-                    <div className="p-7">
-
-                      <h3
-                        className="
-                          text-xl
-                          font-bold
-                          leading-snug
-                          text-slate-900
-                        "
-                      >
-                        {service.title}
-                      </h3>
-
-                      <p
-                        className="
-                          mt-4
-                          min-h-[96px]
-                          text-base
-                          leading-7
-                          text-slate-600
-                        "
-                      >
-                        {service.description}
-                      </p>
-
-                      <Link
-                        href={service.href}
-                        className="
-                          mt-6
-                          inline-flex
-                          items-center
-                          gap-2
-                          font-bold
-                          text-[#1683FF]
-                          transition-all
-                          duration-300
-                          hover:gap-3
-                          hover:text-[#0B72E5]
-                        "
-                      >
-                        Learn More
-
-                        <ArrowRight className="h-5 w-5" />
-                      </Link>
 
                     </div>
 
@@ -582,11 +621,12 @@ export default function ServicesPage() {
 
         </section>
 
+
         {/* ===================================================== */}
         {/* SERVICE HIGHLIGHTS */}
         {/* ===================================================== */}
 
-        <section className="bg-white py-16 lg:py-20">
+        <section className="bg-[#F3F6FA] py-16 lg:py-20">
 
           <div
             className="
@@ -616,7 +656,7 @@ export default function ServicesPage() {
                   mt-3
                   text-3xl
                   font-bold
-                  text-slate-900
+                  text-[#08213D]
                   lg:text-4xl
                 "
               >
@@ -628,10 +668,10 @@ export default function ServicesPage() {
             <div
               className="
                 mx-auto
-                mt-12
+                mt-10
                 grid
                 max-w-5xl
-                gap-5
+                gap-4
                 sm:grid-cols-2
                 lg:grid-cols-4
               "
@@ -651,30 +691,27 @@ export default function ServicesPage() {
                     gap-3
                     rounded-xl
                     border
-                    border-white/10
-                    bg-[#08213D]
+                    border-slate-200
+                    bg-white
                     p-5
-                    shadow-[0_10px_25px_rgba(0,0,0,0.12)]
-                    transition-all
-                    duration-300
-                    hover:-translate-y-1
-                    hover:border-[#4EA8FF]/60
-                    hover:bg-[#061A31]
+                    shadow-[0_8px_25px_rgba(8,33,61,0.05)]
                   "
                 >
+
                   <CheckCircle2
                     className="
                       h-5
                       w-5
                       shrink-0
-                      text-[#4EA8FF]
+                      text-[#1683FF]
                     "
                   />
 
                   <span
                     className="
+                      text-sm
                       font-semibold
-                      text-white
+                      text-[#08213D]
                     "
                   >
                     {item}
@@ -688,6 +725,7 @@ export default function ServicesPage() {
           </div>
 
         </section>
+
 
         {/* ===================================================== */}
         {/* FINAL SECTION */}
@@ -754,10 +792,6 @@ export default function ServicesPage() {
         </section>
 
       </main>
-
-      {/* ===================================================== */}
-      {/* FOOTER */}
-      {/* ===================================================== */}
 
       <Footer />
     </>
