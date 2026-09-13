@@ -1,6 +1,47 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Coolmate Clients & Partners | Aircon Services Philippines",
+
+  description:
+    "Meet the clients and strategic partners of Coolmate Maintenance & Solutions Co. We provide professional air conditioning maintenance, troubleshooting, repair, and VRF services for organizations across the Philippines.",
+
+  alternates: {
+    canonical: "https://www.coolmateco.com/clients",
+  },
+
+  openGraph: {
+    title: "Coolmate Clients & Partners | Aircon Services Philippines",
+
+    description:
+      "Explore the clients and strategic partners of Coolmate Maintenance & Solutions Co. and our professional air conditioning services across the Philippines.",
+
+    url: "https://www.coolmateco.com/clients",
+
+    siteName: "Coolmate Maintenance & Solutions Co.",
+
+    locale: "en_PH",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/images/clients/clients-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Coolmate clients and strategic partners",
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const clients = [
   {
@@ -62,7 +103,6 @@ export default function ClientsPage() {
       <Navbar />
 
       <main className="bg-white">
-
         {/* ===================================================== */}
         {/* HERO */}
         {/* ===================================================== */}
@@ -75,7 +115,6 @@ export default function ClientsPage() {
             lg:min-h-[600px]
           "
         >
-
           {/* ================================================= */}
           {/* HERO BACKGROUND PHOTO */}
           {/* ================================================= */}
@@ -130,7 +169,6 @@ export default function ClientsPage() {
               lg:min-h-[600px]
             "
           >
-
             <div
               className="
                 mx-auto
@@ -140,9 +178,7 @@ export default function ClientsPage() {
                 lg:px-10
               "
             >
-
               <div className="max-w-4xl">
-
                 {/* Blue Accent */}
 
                 <div
@@ -210,13 +246,9 @@ export default function ClientsPage() {
                   air conditioning contractors across the
                   Philippines.
                 </p>
-
               </div>
-
             </div>
-
           </div>
-
         </section>
 
         {/* ===================================================== */}
@@ -224,7 +256,6 @@ export default function ClientsPage() {
         {/* ===================================================== */}
 
         <section className="bg-white py-16 lg:py-20">
-
           <div
             className="
               mx-auto
@@ -233,9 +264,7 @@ export default function ClientsPage() {
               lg:px-10
             "
           >
-
             <div className="mx-auto max-w-3xl text-center">
-
               <p
                 className="
                   text-sm
@@ -274,11 +303,8 @@ export default function ClientsPage() {
                 service, professional workmanship, and quality
                 air conditioning solutions.
               </p>
-
             </div>
-
           </div>
-
         </section>
 
         {/* ===================================================== */}
@@ -286,7 +312,6 @@ export default function ClientsPage() {
         {/* ===================================================== */}
 
         <section className="bg-slate-50 py-16 lg:py-24">
-
           <div
             className="
               mx-auto
@@ -295,11 +320,9 @@ export default function ClientsPage() {
               lg:px-10
             "
           >
-
             {/* Header */}
 
             <div className="text-center">
-
               <p
                 className="
                   text-sm
@@ -340,7 +363,6 @@ export default function ClientsPage() {
                 maintenance, troubleshooting, repair, and VRF
                 services to a growing network of clients.
               </p>
-
             </div>
 
             {/* Client Logos */}
@@ -359,7 +381,6 @@ export default function ClientsPage() {
                 lg:gap-y-12
               "
             >
-
               {clients.map((client) => (
                 <div
                   key={client.name}
@@ -385,7 +406,6 @@ export default function ClientsPage() {
                     lg:w-44
                   "
                 >
-
                   <Image
                     src={client.logo}
                     alt={client.name}
@@ -401,14 +421,10 @@ export default function ClientsPage() {
                       group-hover:scale-105
                     "
                   />
-
                 </div>
               ))}
-
             </div>
-
           </div>
-
         </section>
 
         {/* ===================================================== */}
@@ -416,7 +432,6 @@ export default function ClientsPage() {
         {/* ===================================================== */}
 
         <section className="bg-white py-16 lg:py-24">
-
           <div
             className="
               mx-auto
@@ -425,11 +440,9 @@ export default function ClientsPage() {
               lg:px-10
             "
           >
-
             {/* Header */}
 
             <div className="text-center">
-
               <p
                 className="
                   text-sm
@@ -472,7 +485,6 @@ export default function ClientsPage() {
                 troubleshooting, repair, and specialized VRF
                 services.
               </p>
-
             </div>
 
             {/* Partner Logos */}
@@ -488,7 +500,6 @@ export default function ClientsPage() {
                 md:grid-cols-3
               "
             >
-
               {partners.map((partner) => (
                 <div
                   key={partner.name}
@@ -511,7 +522,6 @@ export default function ClientsPage() {
                     hover:shadow-[0_15px_40px_rgba(22,131,255,0.15)]
                   "
                 >
-
                   <Image
                     src={partner.logo}
                     alt={partner.name}
@@ -527,14 +537,10 @@ export default function ClientsPage() {
                       group-hover:scale-105
                     "
                   />
-
                 </div>
               ))}
-
             </div>
-
           </div>
-
         </section>
 
         {/* ===================================================== */}
@@ -542,7 +548,6 @@ export default function ClientsPage() {
         {/* ===================================================== */}
 
         <section className="bg-[#08213D] py-16 lg:py-20">
-
           <div
             className="
               mx-auto
@@ -551,7 +556,6 @@ export default function ClientsPage() {
               text-center
             "
           >
-
             <p
               className="
                 text-sm
@@ -591,11 +595,8 @@ export default function ClientsPage() {
               services, Coolmate Maintenance & Solutions Co. is
               ready to work with you.
             </p>
-
           </div>
-
         </section>
-
       </main>
 
       {/* ===================================================== */}

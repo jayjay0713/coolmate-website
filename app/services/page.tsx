@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -9,9 +10,49 @@ import {
   Wrench,
   Sparkles,
   Search,
-  Settings,
   ShoppingCart,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title:
+    "Aircon Services Philippines | Aircon Installation, Repair & Maintenance | Coolmate",
+
+  description:
+    "Professional aircon services in the Philippines, including installation, cleaning, repair, troubleshooting, and preventive maintenance for residential, commercial, and industrial clients.",
+
+  alternates: {
+    canonical: "https://www.coolmateco.com/services",
+  },
+
+  openGraph: {
+    title: "Aircon Services Philippines | Coolmate",
+
+    description:
+      "Professional aircon installation, cleaning, repair, troubleshooting, and preventive maintenance services for residential, commercial, and industrial clients.",
+
+    url: "https://www.coolmateco.com/services",
+
+    siteName: "Coolmate Maintenance & Solutions Co.",
+
+    locale: "en_PH",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/images/services/services-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Coolmate air conditioning services",
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const services = [
   {
@@ -240,6 +281,7 @@ export default function ServicesPage() {
               lg:px-10
             "
           >
+
             <div className="mx-auto max-w-3xl text-center">
 
               <p
@@ -282,6 +324,7 @@ export default function ServicesPage() {
               </p>
 
             </div>
+
           </div>
 
         </section>
@@ -664,6 +707,7 @@ export default function ServicesPage() {
               </h2>
 
             </div>
+
 
             <div
               className="

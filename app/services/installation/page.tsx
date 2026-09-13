@@ -13,23 +13,29 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Aircon Sales & Installation Philippines",
+  title: "Aircon Installation Philippines | Aircon Sales & Installation | Coolmate",
 
   description:
-    "Professional air conditioning sales and installation services for residential, commercial, and industrial clients in the Philippines. Coolmate provides system selection support, installation, testing, commissioning, and air conditioning solutions.",
+    "Professional aircon sales and installation services for residential, commercial, and industrial clients in the Philippines. Coolmate provides equipment selection support, installation, testing, commissioning, and reliable air conditioning solutions.",
 
   alternates: {
     canonical: "https://www.coolmateco.com/services/installation",
   },
 
   openGraph: {
-    title: "Aircon Sales & Installation Philippines",
+    title: "Aircon Installation Philippines | Coolmate",
+
     description:
-      "Professional air conditioning sales and installation services for residential, commercial, and industrial clients in the Philippines.",
+      "Professional aircon sales and installation services for residential, commercial, and industrial clients in the Philippines.",
+
     url: "https://www.coolmateco.com/services/installation",
+
     siteName: "Coolmate Maintenance & Solutions Co.",
+
     locale: "en_PH",
+
     type: "website",
+
     images: [
       {
         url: "/images/services/installation-hero.jpg",
@@ -531,7 +537,7 @@ export default function AirConditioningInstallationPage() {
                   hover:-translate-y-2
                   hover:bg-[#061A31]
                   hover:border-[#4EA8FF]/60
-                  hover:shadow-[0_15px_40px_rgba(0,0,0,0.20)]
+                  hover:shadow-[0_15px_40px_rgba(8,33,61,0.20)]
                 "
               >
 
@@ -765,6 +771,7 @@ export default function AirConditioningInstallationPage() {
             </p>
 
           </div>
+
         </section>
 
       </main>

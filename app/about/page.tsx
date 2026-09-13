@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -11,6 +12,48 @@ import {
   Award,
   Building2,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title:
+    "About Coolmate | Aircon Services Company in the Philippines",
+
+  description:
+    "Learn about Coolmate Maintenance & Solutions Co., an air conditioning services company providing preventive maintenance, repair, troubleshooting, cleaning, and installation for residential, commercial, and industrial clients in the Philippines.",
+
+  alternates: {
+    canonical: "https://www.coolmateco.com/about",
+  },
+
+  openGraph: {
+    title:
+      "About Coolmate | Aircon Services Company in the Philippines",
+
+    description:
+      "Learn about Coolmate Maintenance & Solutions Co. and our professional air conditioning services for residential, commercial, and industrial clients in the Philippines.",
+
+    url: "https://www.coolmateco.com/about",
+
+    siteName: "Coolmate Maintenance & Solutions Co.",
+
+    locale: "en_PH",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/images/about/about-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About Coolmate Maintenance & Solutions Co.",
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -156,6 +199,7 @@ export default function AboutPage() {
 
         </section>
 
+
         {/* ===================================================== */}
         {/* COMPANY STORY */}
         {/* ===================================================== */}
@@ -263,6 +307,7 @@ export default function AboutPage() {
 
             </div>
 
+
             {/* RIGHT */}
 
             <div className="relative">
@@ -358,6 +403,7 @@ export default function AboutPage() {
 
         </section>
 
+
         {/* ===================================================== */}
         {/* MISSION & VISION */}
         {/* ===================================================== */}
@@ -415,6 +461,7 @@ export default function AboutPage() {
               </p>
 
             </div>
+
 
             {/* Cards */}
 
@@ -502,6 +549,7 @@ export default function AboutPage() {
 
               </div>
 
+
               {/* VISION */}
 
               <div
@@ -579,6 +627,7 @@ export default function AboutPage() {
 
         </section>
 
+
         {/* ===================================================== */}
         {/* CORE VALUES */}
         {/* ===================================================== */}
@@ -634,6 +683,7 @@ export default function AboutPage() {
 
             </div>
 
+
             {/* Value Cards */}
 
             <div
@@ -675,6 +725,7 @@ export default function AboutPage() {
 
               </div>
 
+
               {/* RELIABILITY */}
 
               <div
@@ -703,6 +754,7 @@ export default function AboutPage() {
 
               </div>
 
+
               {/* CUSTOMER FOCUS */}
 
               <div
@@ -730,6 +782,7 @@ export default function AboutPage() {
                 </p>
 
               </div>
+
 
               {/* PROFESSIONALISM */}
 
@@ -764,6 +817,7 @@ export default function AboutPage() {
           </div>
 
         </section>
+
 
         {/* ===================================================== */}
         {/* WHAT WE DO */}
@@ -820,6 +874,7 @@ export default function AboutPage() {
               </p>
 
             </div>
+
 
             {/* Service Cards */}
 
@@ -899,6 +954,7 @@ export default function AboutPage() {
           </div>
 
         </section>
+
 
         {/* ===================================================== */}
         {/* FINAL CTA */}

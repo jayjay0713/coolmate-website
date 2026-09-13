@@ -12,38 +12,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://coolmateco.com";
+const siteUrl = "https://www.coolmateco.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  title:
-    "Coolmate Maintenance & Solutions Co. | VRF & Aircon Maintenance, Repair & Troubleshooting",
+title: "Coolmate Maintenance & Solutions Co. | Aircon Services Philippines",
 
   description:
-    "Coolmate Maintenance & Solutions Co. provides professional VRF and air conditioning preventive maintenance, troubleshooting, repair, chemical cleaning, and technical services for residential, commercial, and industrial clients in Cavite, Metro Manila, Laguna, Batangas, and nearby areas.",
-
-  keywords: [
-    "VRF preventive maintenance",
-    "VRF troubleshooting",
-    "VRF repair",
-    "Aircon preventive maintenance",
-    "Aircon repair",
-    "Aircon troubleshooting",
-    "Chemical cleaning",
-    "VRF services",
-    "HVAC services",
-    "Mitsubishi Electric VRF",
-    "Commercial air conditioning",
-    "Residential air conditioning",
-    "Industrial HVAC",
-    "Aircon services Cavite",
-    "Aircon services Imus",
-    "VRF services Cavite",
-    "VRF services Metro Manila",
-    "HVAC contractor Cavite",
-    "Coolmate Maintenance and Solutions Co.",
-  ],
+    "Coolmate Maintenance & Solutions Co. provides professional air conditioning preventive maintenance, troubleshooting, repair, cleaning, sales, and installation services for residential, commercial, and industrial clients in Cavite, Metro Manila, Laguna, Batangas, and nearby areas.",
 
   authors: [
     {
@@ -60,10 +37,10 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Coolmate Maintenance & Solutions Co. | VRF & Aircon Maintenance, Repair & Troubleshooting",
+      "Coolmate Maintenance & Solutions Co. | Aircon Services Philippines",
 
     description:
-      "Professional VRF and air conditioning preventive maintenance, troubleshooting, repair, chemical cleaning, and technical services across Cavite, Metro Manila, Laguna, Batangas, and nearby areas.",
+      "Professional air conditioning preventive maintenance, troubleshooting, repair, cleaning, sales, and installation services across Cavite, Metro Manila, Laguna, Batangas, and nearby areas.",
 
     url: siteUrl,
 
@@ -87,10 +64,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Coolmate Maintenance & Solutions Co. | VRF & Aircon Services",
+      "Coolmate Maintenance & Solutions Co. | Aircon Services Philippines",
 
     description:
-      "Professional VRF and air conditioning preventive maintenance, troubleshooting, repair, chemical cleaning, and technical services.",
+      "Professional air conditioning preventive maintenance, troubleshooting, repair, cleaning, sales, and installation services.",
 
     images: ["/images/logo/logo.png"],
   },
@@ -200,13 +177,12 @@ export default function RootLayout({
     ],
 
     serviceType: [
-      "VRF Preventive Maintenance",
-      "VRF Troubleshooting",
-      "VRF Repair",
       "Air Conditioning Preventive Maintenance",
-      "Air Conditioning Repair",
       "Air Conditioning Troubleshooting",
-      "Chemical Cleaning",
+      "Air Conditioning Repair",
+      "Air Conditioning Cleaning",
+      "Air Conditioning Sales",
+      "Air Conditioning Installation",
       "VRF Services",
     ],
 

@@ -13,23 +13,30 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Aircon Troubleshooting Services Philippines",
+  title:
+    "Aircon Troubleshooting Philippines | Aircon Diagnostics | Coolmate",
 
   description:
-    "Professional air conditioning troubleshooting and diagnostic services for residential, commercial, and industrial clients in the Philippines. Coolmate investigates cooling, electrical, drainage, control, airflow, and operating problems to help identify the cause and recommend the appropriate solution.",
+    "Professional aircon troubleshooting and diagnostic services for residential, commercial, and industrial clients in the Philippines. Coolmate investigates cooling, electrical, drainage, control, airflow, and operating problems to identify the cause and recommend the appropriate solution.",
 
   alternates: {
     canonical: "https://www.coolmateco.com/services/troubleshooting",
   },
 
   openGraph: {
-    title: "Aircon Troubleshooting Services Philippines",
+    title: "Aircon Troubleshooting Philippines | Coolmate",
+
     description:
-      "Professional air conditioning troubleshooting and diagnostic services for residential, commercial, and industrial clients in the Philippines.",
+      "Professional aircon troubleshooting and diagnostic services for residential, commercial, and industrial clients in the Philippines.",
+
     url: "https://www.coolmateco.com/services/troubleshooting",
+
     siteName: "Coolmate Maintenance & Solutions Co.",
+
     locale: "en_PH",
+
     type: "website",
+
     images: [
       {
         url: "/images/services/troubleshooting-hero.jpg",

@@ -10,23 +10,29 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Aircon Cleaning Services Philippines",
+  title: "Aircon Cleaning Philippines | Aircon Cleaning Services | Coolmate",
 
   description:
-    "Professional air conditioning cleaning services for residential, commercial, and industrial clients in the Philippines. Coolmate provides general aircon cleaning, drain pan cleaning, drain line vacuuming, and system inspection.",
+    "Professional aircon cleaning services for residential, commercial, and industrial clients in the Philippines. Coolmate provides general aircon cleaning, drain pan cleaning, drain line vacuuming, system inspection, and maintenance support.",
 
   alternates: {
     canonical: "https://www.coolmateco.com/services/cleaning",
   },
 
   openGraph: {
-    title: "Aircon Cleaning Services Philippines",
+    title: "Aircon Cleaning Philippines | Coolmate",
+
     description:
-      "Professional air conditioning cleaning services for residential, commercial, and industrial clients in the Philippines.",
+      "Professional aircon cleaning services for residential, commercial, and industrial clients in the Philippines.",
+
     url: "https://www.coolmateco.com/services/cleaning",
+
     siteName: "Coolmate Maintenance & Solutions Co.",
+
     locale: "en_PH",
+
     type: "website",
+
     images: [
       {
         url: "/images/services/cleaning-hero.jpg",

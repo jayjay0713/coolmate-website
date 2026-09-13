@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -7,6 +9,12 @@ import DownloadProfile from "@/components/DownloadProfile";
 import FloatingMessenger from "@/components/FloatingMessenger";
 import ServiceAreas from "@/components/ServiceAreas";
 
+export const metadata: Metadata = {
+  title:
+    "Aircon Services Philippines | Installation, Cleaning, Repair & Maintenance | Coolmate",
+  description:
+    "Coolmate provides professional aircon installation, cleaning, repair, troubleshooting, and preventive maintenance services for residential, commercial, and industrial clients in the Philippines.",
+};
 
 export default function HomePage() {
   return (
@@ -16,7 +24,7 @@ export default function HomePage() {
       <Expertise />
       <WhyChooseUs />
       <ServiceAreas />
-      <DownloadProfile />   
+      <DownloadProfile />
       <Footer />
 
       <FloatingMessenger />

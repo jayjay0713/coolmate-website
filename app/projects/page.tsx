@@ -1,7 +1,48 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Aircon Projects Philippines | Air Conditioning Projects | Coolmate",
+
+  description:
+    "View selected air conditioning projects completed by Coolmate Maintenance & Solutions Co., including VRF preventive maintenance, aircon repair, troubleshooting, and commercial air conditioning work in the Philippines.",
+
+  alternates: {
+    canonical: "https://www.coolmateco.com/projects",
+  },
+
+  openGraph: {
+    title: "Aircon Projects Philippines | Coolmate",
+
+    description:
+      "Selected air conditioning maintenance, repair, troubleshooting, and VRF projects completed by Coolmate Maintenance & Solutions Co. in the Philippines.",
+
+    url: "https://www.coolmateco.com/projects",
+
+    siteName: "Coolmate Maintenance & Solutions Co.",
+
+    locale: "en_PH",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/images/projects/projects-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Coolmate air conditioning projects",
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const projects = [
   {
@@ -33,7 +74,6 @@ export default function ProjectsPage() {
       <Navbar />
 
       <main className="bg-white">
-
         {/* ===================================================== */}
         {/* PROJECTS HERO */}
         {/* ===================================================== */}
@@ -46,7 +86,6 @@ export default function ProjectsPage() {
             lg:min-h-[520px]
           "
         >
-
           {/* Background Photo */}
 
           <Image
@@ -98,7 +137,6 @@ export default function ProjectsPage() {
               lg:min-h-[520px]
             "
           >
-
             <div
               className="
                 mx-auto
@@ -107,9 +145,7 @@ export default function ProjectsPage() {
                 px-6
               "
             >
-
               <div className="max-w-4xl">
-
                 {/* Label */}
 
                 <p
@@ -161,13 +197,9 @@ export default function ProjectsPage() {
                   repair, troubleshooting, and HVAC projects completed
                   by Coolmate Maintenance & Solutions Co.
                 </p>
-
               </div>
-
             </div>
-
           </div>
-
         </section>
 
         {/* ===================================================== */}
@@ -181,7 +213,6 @@ export default function ProjectsPage() {
             lg:py-24
           "
         >
-
           <div
             className="
               mx-auto
@@ -190,13 +221,11 @@ export default function ProjectsPage() {
               px-6
             "
           >
-
             {/* ================================================= */}
             {/* HEADER */}
             {/* ================================================= */}
 
             <div className="text-center">
-
               <p
                 className="
                   text-lg
@@ -240,7 +269,6 @@ export default function ProjectsPage() {
                 across residential, commercial, and industrial
                 air conditioning systems.
               </p>
-
             </div>
 
             {/* ================================================= */}
@@ -258,7 +286,6 @@ export default function ProjectsPage() {
                 lg:gap-8
               "
             >
-
               {projects.map((project) => (
                 <div
                   key={project.title}
@@ -278,7 +305,6 @@ export default function ProjectsPage() {
                     hover:shadow-[0_20px_50px_rgba(8,33,61,0.30)]
                   "
                 >
-
                   {/* ================================================= */}
                   {/* PROJECT IMAGE */}
                   {/* ================================================= */}
@@ -291,7 +317,6 @@ export default function ProjectsPage() {
                       lg:h-64
                     "
                   >
-
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -348,7 +373,6 @@ export default function ProjectsPage() {
                       </span>{" "}
                       {project.category}
                     </div>
-
                   </div>
 
                   {/* ================================================= */}
@@ -356,7 +380,6 @@ export default function ProjectsPage() {
                   {/* ================================================= */}
 
                   <div className="p-6 lg:p-7">
-
                     {/* Blue Accent */}
 
                     <div
@@ -397,7 +420,6 @@ export default function ProjectsPage() {
                         text-slate-200
                       "
                     >
-
                       <MapPin
                         className="
                           mt-0.5
@@ -411,7 +433,6 @@ export default function ProjectsPage() {
                       <span>
                         {project.location}
                       </span>
-
                     </div>
 
                     {/* System */}
@@ -426,16 +447,11 @@ export default function ProjectsPage() {
                     >
                       {project.system}
                     </p>
-
                   </div>
-
                 </div>
               ))}
-
             </div>
-
           </div>
-
         </section>
 
         {/* ===================================================== */}
@@ -449,7 +465,6 @@ export default function ProjectsPage() {
             lg:py-20
           "
         >
-
           <div
             className="
               mx-auto
@@ -459,7 +474,6 @@ export default function ProjectsPage() {
               text-center
             "
           >
-
             <p
               className="
                 text-sm
@@ -498,11 +512,8 @@ export default function ProjectsPage() {
               troubleshooting, or installation, our team is ready
               to help.
             </p>
-
           </div>
-
         </section>
-
       </main>
 
       <Footer />
